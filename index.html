@@ -2,29 +2,165 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Milagros García</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #0b0b0b;
+      color: white;
+    }
+
+    header {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    p {
+      opacity: 0.7;
+      margin-top: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .card img,
+    .card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    }
+
+    .overlay h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .overlay p {
+      margin: 5px 0 0;
+      font-size: 13px;
+      opacity: 0.8;
+    }
+  </style>
 </head>
 
-<body style="background:black; color:white; font-family:sans-serif; margin:0; padding:40px;">
+<body>
 
-<h1 style="text-align:center;">Milagros García</h1>
-<p style="text-align:center;">No hago contenido. Construyo percepción de marca.</p>
+<header>
+  <h1>Milagros García</h1>
+  <p>No hago contenido. Construyo percepción de marca.</p>
+</header>
 
-<div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:20px; max-width:900px; margin:auto;">
+<div class="grid">
 
-  <img src="coca-campana.webp" style="width:100%; border-radius:16px;">
-  <img src="jockey-hero.webp" style="width:100%; border-radius:16px;">
-  <img src="jockey-platos.webp" style="width:100%; border-radius:16px;">
-  <img src="di-pack-sorrentinos.webp" style="width:100%; border-radius:16px;">
-  <img src="nh-post.webp" style="width:100%; border-radius:16px;">
-  <img src="solari-lanzamiento.webp" style="width:100%; border-radius:16px;">
+  <!-- JOCKEY -->
+  <div class="card">
+    <img src="jockey-hero.webp">
+    <div class="overlay">
+      <h3>Jockey Club</h3>
+      <p>Rebranding de percepción premium</p>
+    </div>
+  </div>
 
-</div>
+  <div class="card">
+    <img src="jockey-platos.webp">
+  </div>
 
-<div style="max-width:900px; margin:40px auto;">
-  <video controls style="width:100%; border-radius:16px;">
-    <source src="carrete-di-simonte.mp4" type="video/mp4">
-  </video>
+  <div class="card">
+    <img src="jockey-tragos.webp">
+  </div>
+
+  <div class="card">
+    <img src="jockey-ambiente.webp">
+  </div>
+
+  <!-- DI SIMONTE -->
+  <div class="card">
+    <img src="di-pack-empanadas.webp">
+    <div class="overlay">
+      <h3>Di Simonte</h3>
+      <p>Rebranding & packaging</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="di-pack-sorrentinos.webp">
+  </div>
+
+  <div class="card">
+    <video controls>
+      <source src="carrete-di-simonte.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- NUESTRO HOGAR -->
+  <div class="card">
+    <img src="nh-post.webp">
+    <div class="overlay">
+      <h3>Nuestro Hogar</h3>
+      <p>Contenido y lanzamiento</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="nh-lanzamiento.webp">
+  </div>
+
+  <!-- SOLARI -->
+  <div class="card">
+    <img src="solari-lanzamiento.webp">
+    <div class="overlay">
+      <h3>Solari Bienes Raíces</h3>
+      <p>Estrategia y comunicación</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="solari-venta.webp">
+  </div>
+
+  <!-- COCA -->
+  <div class="card">
+    <img src="coca-hero.webp">
+    <div class="overlay">
+      <h3>Coca-Cola</h3>
+      <p>Análisis de campaña</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="coca-publicidad.webp">
+  </div>
+
 </div>
 
 </body>
