@@ -1,167 +1,615 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Milagros García</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Milagros García | Portfolio Estratégico</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: #0b0b0b;
-      color: white;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    header {
-      padding: 40px 20px;
-      text-align: center;
-    }
+<style>
+:root {
+  --bg:#0d0c0a;
+  --panel:#171411;
+  --panel2:#211d18;
+  --text:#f4efe6;
+  --muted:rgba(244,239,230,.68);
+  --soft:rgba(244,239,230,.1);
+  --accent:#d9ae62;
+  --accent2:#f3d9a2;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 32px;
-    }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Outfit, sans-serif;
+  background:radial-gradient(circle at top left, rgba(217,174,98,.14), transparent 32rem), var(--bg);
+  color:var(--text);
+  line-height:1.55;
+}
+a{color:inherit}
+img{display:block;width:100%;height:auto}
 
-    p {
-      opacity: 0.7;
-      margin-top: 10px;
-    }
+.nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px clamp(18px,4vw,58px);
+  background:rgba(13,12,10,.78);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--soft);
+}
+.logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:25px;
+  font-style:italic;
+  text-decoration:none;
+}
+.links{display:flex;gap:24px;list-style:none}
+.links a{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  text-decoration:none;
+  color:var(--muted);
+}
+.links a:hover{color:var(--accent)}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.hero{
+  min-height:88vh;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:48px;
+  align-items:center;
+  padding:clamp(48px,8vw,120px) clamp(18px,5vw,80px);
+}
 
-    .card {
-      border-radius: 20px;
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-    }
+.kicker{
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  font-size:12px;
+  margin-bottom:18px;
+  display:block;
+}
 
-    .card img,
-    .card video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+h1,h2{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
+  line-height:.92;
+}
+h1{font-size:clamp(64px,11vw,150px)}
+h1 em,h2 em{color:var(--accent);font-style:italic}
 
-    .overlay {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      padding: 20px;
-      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-    }
+.lead{
+  font-family:'Cormorant Garamond',serif;
+  color:var(--muted);
+  font-size:clamp(24px,3vw,42px);
+  font-style:italic;
+  margin-top:26px;
+  max-width:760px;
+}
 
-    .overlay h3 {
-      margin: 0;
-      font-size: 18px;
-    }
+.hero-card{
+  background:linear-gradient(145deg,var(--panel),var(--panel2));
+  border:1px solid var(--soft);
+  padding:28px;
+  border-radius:30px;
+  box-shadow:0 30px 80px rgba(0,0,0,.28);
+}
+.hero-card p{color:var(--muted);margin-top:10px}
 
-    .overlay p {
-      margin: 5px 0 0;
-      font-size: 13px;
-      opacity: 0.8;
-    }
-  </style>
+.pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.pill{
+  border:1px solid rgba(217,174,98,.35);
+  color:var(--accent2);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:12px;
+}
+
+.section{
+  padding:clamp(64px,9vw,130px) clamp(18px,5vw,80px);
+  border-top:1px solid var(--soft);
+}
+.section-head{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  margin-bottom:48px;
+  align-items:end;
+}
+h2{font-size:clamp(44px,7vw,92px)}
+.section-head p{color:var(--muted);max-width:620px}
+
+.project{
+  margin:0 0 92px;
+  padding:clamp(22px,4vw,48px);
+  background:rgba(255,255,255,.035);
+  border:1px solid var(--soft);
+  border-radius:36px;
+}
+.project-top{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:34px;
+  align-items:end;
+  margin-bottom:28px;
+}
+.num{
+  color:var(--accent);
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.project h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(42px,6vw,82px);
+  font-weight:400;
+  line-height:1;
+}
+.project-copy{color:var(--muted);font-size:16px}
+
+.meta{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:22px 0;
+}
+.meta div{
+  background:rgba(0,0,0,.16);
+  border:1px solid var(--soft);
+  border-radius:18px;
+  padding:14px;
+}
+.meta b{
+  display:block;
+  color:var(--text);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin-bottom:4px;
+}
+.meta span{color:var(--muted);font-size:14px}
+
+.gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  align-items:start;
+}
+.shot{
+  position:relative;
+  overflow:hidden;
+  border-radius:26px;
+  border:1px solid var(--soft);
+  background:#0d0c0a;
+  padding:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:zoom-in;
+}
+.shot img,.shot video{
+  width:100%;
+  height:auto;
+  max-height:680px;
+  object-fit:contain;
+  border-radius:18px;
+  transition:transform .35s ease;
+}
+.shot:hover img,.shot:hover video{transform:scale(1.01)}
+
+.caption{
+  position:absolute;
+  left:22px;
+  right:22px;
+  bottom:22px;
+  background:rgba(13,12,10,.72);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;
+  padding:10px 12px;
+  color:var(--text);
+  font-size:13px;
+}
+
+.thesis{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  align-items:center;
+}
+.thesis-card{
+  background:var(--text);
+  color:var(--bg);
+  border-radius:36px;
+  padding:clamp(26px,5vw,56px);
+}
+.thesis-card p{
+  margin-top:18px;
+  color:rgba(13,12,10,.68);
+}
+.quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,4vw,54px);
+  font-style:italic;
+  color:var(--accent2);
+}
+
+.about-box{
+  max-width:850px;
+  background:rgba(255,255,255,.035);
+  border:1px solid var(--soft);
+  border-radius:36px;
+  padding:clamp(28px,5vw,60px);
+}
+.about-box p{
+  color:var(--muted);
+  margin-bottom:18px;
+  font-size:18px;
+}
+
+.contact{
+  background:var(--text);
+  color:var(--bg);
+  border-radius:36px;
+  padding:clamp(28px,5vw,60px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  align-items:center;
+}
+.contact h2{font-size:clamp(38px,6vw,86px)}
+.btn{
+  display:inline-block;
+  margin-top:14px;
+  padding:12px 18px;
+  border:1px solid var(--bg);
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+footer{
+  padding:32px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  z-index:999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  max-width:94vw;
+  max-height:90vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border-radius:18px;
+}
+.lightbox button{
+  position:absolute;
+  top:18px;
+  right:22px;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:999px;
+  padding:10px 14px;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(26px);
+  transition:.8s ease;
+}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:850px){
+  .hero,.section-head,.project-top,.thesis,.contact{grid-template-columns:1fr}
+  .links{display:none}
+  .gallery{grid-template-columns:1fr}
+  .meta{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>Milagros García</h1>
-  <p>No hago contenido. Construyo percepción de marca.</p>
+<nav class="nav">
+  <a class="logo" href="#">Milagros García</a>
+  <ul class="links">
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#tesis">Tesis</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="reveal">
+    <span class="kicker">Brand Strategy · Comunicación · Contenido</span>
+    <h1>Portfolio<br><em>Estratégico</em></h1>
+    <p class="lead">
+      Estrategia, marcas y cultura. No creo en contenido por contenido: creo en marcas que conectan con lo que las personas sienten, con lo que el mercado necesita y con la percepción que quieren construir.
+    </p>
+  </div>
+
+  <aside class="hero-card reveal">
+    <span class="kicker">Milagros García</span>
+    <h2 style="font-size:46px">Publicista &<br><em>Brand Thinker</em></h2>
+    <p>
+      Trabajo desde el diagnóstico, el insight y la construcción de percepción: no solo piezas lindas, sino marcas que comunican mejor.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Estrategia de marca</span>
+      <span class="pill">Social media</span>
+      <span class="pill">Copywriting</span>
+      <span class="pill">Dirección creativa</span>
+      <span class="pill">Contenido cultural</span>
+    </div>
+  </aside>
 </header>
 
-<div class="grid">
+<main>
 
-  <!-- JOCKEY -->
-  <div class="card">
-    <img src="jockey-hero.webp">
-    <div class="overlay">
-      <h3>Jockey Club</h3>
-      <p>Rebranding de percepción premium</p>
+<section id="proyectos" class="section">
+
+  <div class="section-head reveal">
+    <div>
+      <span class="kicker">Casos seleccionados</span>
+      <h2>Trabajos con<br><em>criterio</em></h2>
+    </div>
+    <p>
+      Una selección curada de proyectos para mostrar estética, estrategia y capacidad de adaptar la comunicación a distintos rubros: gastronomía, lifestyle, real estate, emprendimientos y proyectos académicos.
+    </p>
+  </div>
+
+  <article class="project reveal">
+    <div class="project-top">
+      <div>
+        <span class="num">01 · Estrategia de marca & lifestyle</span>
+        <h3>Jockey <em>Club</em></h3>
+      </div>
+      <div class="project-copy">
+        Diagnóstico y propuesta de reposicionamiento para elevar la percepción del lugar: de una comunicación funcional a una experiencia más premium, aspiracional y social.
+      </div>
+    </div>
+
+    <div class="meta">
+      <div><b>Rol</b><span>Análisis estratégico + propuesta de comunicación</span></div>
+      <div><b>Enfoque</b><span>Percepción premium, experiencia, momentos de consumo</span></div>
+      <div><b>Aporte</b><span>Ordenar narrativa visual y verbal para atraer al público correcto</span></div>
+    </div>
+
+    <div class="gallery">
+      <figure class="shot"><img src="jockey-hero.webp" alt="Jockey Club portada"><figcaption class="caption">Imagen principal de marca</figcaption></figure>
+      <figure class="shot"><img src="jockey-platos.webp" alt="Platos Jockey"></figure>
+      <figure class="shot"><img src="jockey-tragos.webp" alt="Tragos Jockey"></figure>
+      <figure class="shot"><img src="jockey-terraza.webp" alt="Terraza Jockey"><figcaption class="caption">Terraza, noche y experiencia social</figcaption></figure>
+      <figure class="shot"><img src="jockey-ambiente.webp" alt="Ambiente Jockey"></figure>
+      <figure class="shot"><img src="jockey-amigos.webp" alt="Jockey amigos"></figure>
+    </div>
+  </article>
+
+  <article class="project reveal">
+    <div class="project-top">
+      <div>
+        <span class="num">02 · Identidad visual & packaging</span>
+        <h3>Di <em>Simonte</em></h3>
+      </div>
+      <div class="project-copy">
+        Construcción de una estética más limpia, artesanal y reconocible para una marca gastronómica que necesitaba ordenar productos, sabores y puntos de contacto.
+      </div>
+    </div>
+
+    <div class="meta">
+      <div><b>Rol</b><span>Identidad, etiquetas, stories y comunicación de producto</span></div>
+      <div><b>Enfoque</b><span>Premiumness artesanal, claridad visual y cercanía</span></div>
+      <div><b>Aporte</b><span>Un sistema simple para vender mejor sin perder calidez</span></div>
+    </div>
+
+    <div class="gallery">
+      <figure class="shot"><img src="di-logo.webp" alt="Logo Di Simonte"><figcaption class="caption">Sistema visual de marca</figcaption></figure>
+      <figure class="shot"><img src="di-pack-empanadas.webp" alt="Packaging empanadas"></figure>
+      <figure class="shot"><img src="di-pack-sorrentinos.webp" alt="Packaging sorrentinos"></figure>
+      <figure class="shot"><img src="di-historia-1.webp" alt="Historia Di Simonte 1"></figure>
+      <figure class="shot"><img src="di-historia-2.webp" alt="Historia Di Simonte 2"></figure>
+      <figure class="shot"><img src="di-historia-3.webp" alt="Historia Di Simonte 3"></figure>
+      <figure class="shot">
+        <video controls muted playsinline src="carrete-di-simonte.mp4"></video>
+      </figure>
+    </div>
+  </article>
+
+  <article class="project reveal">
+    <div class="project-top">
+      <div>
+        <span class="num">03 · Branding emocional</span>
+        <h3>Nuestro <em>Hogar</em></h3>
+      </div>
+      <div class="project-copy">
+        Narrativa de marca para un emprendimiento de alfajores donde la comunicación no vende solo producto: vende recuerdo, cercanía y algo hecho con intención.
+      </div>
+    </div>
+
+    <div class="meta">
+      <div><b>Rol</b><span>Contenido, tono de voz y lanzamiento</span></div>
+      <div><b>Enfoque</b><span>Hogar, vínculo, simpleza y emoción</span></div>
+      <div><b>Aporte</b><span>Una marca más cálida, coherente y compartible</span></div>
+    </div>
+
+    <div class="gallery">
+      <figure class="shot"><img src="nh-post.webp" alt="Nuestro Hogar post"></figure>
+      <figure class="shot"><img src="nh-posteo.webp" alt="Nuestro Hogar posteo"></figure>
+      <figure class="shot"><img src="nh-lanzamiento.webp" alt="Lanzamiento alfajor"><figcaption class="caption">Lanzamiento y producto</figcaption></figure>
+      <figure class="shot"><img src="nh-historia.webp" alt="Historia Nuestro Hogar"></figure>
+    </div>
+  </article>
+
+  <article class="project reveal">
+    <div class="project-top">
+      <div>
+        <span class="num">04 · Comunicación inmobiliaria</span>
+        <h3>Solari <em>Bienes Raíces</em></h3>
+      </div>
+      <div class="project-copy">
+        Estrategia de contenido para humanizar una inmobiliaria, construir confianza y presentar propiedades con una comunicación menos fría y más orientada a decisión.
+      </div>
+    </div>
+
+    <div class="meta">
+      <div><b>Rol</b><span>Social media & content strategy</span></div>
+      <div><b>Enfoque</b><span>Confianza, transparencia y contenido útil</span></div>
+      <div><b>Aporte</b><span>Una marca más cercana sin perder profesionalismo</span></div>
+    </div>
+
+    <div class="gallery">
+      <figure class="shot"><img src="solari-lanzamiento.webp" alt="Solari lanzamiento"></figure>
+      <figure class="shot"><img src="solari-venta.webp" alt="Solari venta"></figure>
+      <figure class="shot"><img src="solari-datos.webp" alt="Solari datos"></figure>
+      <figure class="shot"><img src="solari-info.webp" alt="Solari informacion"><figcaption class="caption">Contenido informativo para generar confianza</figcaption></figure>
+    </div>
+  </article>
+
+  <article class="project reveal">
+    <div class="project-top">
+      <div>
+        <span class="num">05 · Proyecto académico & campaña</span>
+        <h3>Coca-Cola <em>Ecológica</em></h3>
+      </div>
+      <div class="project-copy">
+        Campaña conceptual de sustentabilidad pensada para conectar una marca masiva con hábitos cotidianos, activación y recordación visual.
+      </div>
+    </div>
+
+    <div class="meta">
+      <div><b>Rol</b><span>Concepto, piezas y bajada de campaña</span></div>
+      <div><b>Enfoque</b><span>Sustentabilidad, acción y presencia de marca</span></div>
+      <div><b>Aporte</b><span>Un universo visual consistente para diferentes soportes</span></div>
+    </div>
+
+    <div class="gallery">
+      <figure class="shot"><img src="coca-hero.webp" alt="Proyecto Coca-Cola ecológica"></figure>
+      <figure class="shot"><img src="coca-folleto.webp" alt="Folleto Coca-Cola"></figure>
+      <figure class="shot"><img src="coca-publicidad.webp" alt="Publicidad Coca-Cola"></figure>
+      <figure class="shot"><img src="coca-super.webp" alt="Supermercado Coca-Cola"><figcaption class="caption">Aplicación en punto de contacto</figcaption></figure>
+    </div>
+  </article>
+
+</section>
+
+<section id="tesis" class="section">
+  <div class="thesis">
+    <div class="thesis-card reveal">
+      <span class="kicker" style="color:#8b5e1e">Trabajo final de grado</span>
+      <h2>Fútbol, marca e <em style="color:#8b5e1e">identidad</em></h2>
+      <p>Investigación sobre el fútbol como fenómeno sociocultural y su impacto en las estrategias de marketing y publicidad en Argentina.</p>
+      <p>A través del análisis de campañas y la percepción de consumidores, el trabajo explora cómo las marcas construyen identidad, pertenencia y conexión emocional en torno a la cultura futbolera.</p>
+      <p>El estudio combina análisis de contenido y datos reales para entender qué hace que una campaña deje de ser publicidad y se convierta en parte de la conversación cultural.</p>
+      <p><strong>Metodología:</strong> análisis de campañas + estudio de percepción de consumidores.</p>
+      <p><strong>Licenciatura en Publicidad · Universidad Siglo 21</strong></p>
+    </div>
+
+    <p class="quote reveal">
+      “Las campañas más fuertes no solo comunican: se vuelven parte de una conversación cultural.”
+    </p>
+  </div>
+</section>
+
+<section id="sobre-mi" class="section">
+  <div class="about-box reveal">
+    <span class="kicker">Sobre mí</span>
+    <h2>Más que <em>contenido</em></h2>
+    <p>Soy publicista. Pero más que hacer contenido, me interesa entender qué hace que una marca conecte, se recuerde y construya valor.</p>
+    <p>Trabajo desde la estrategia, el insight y la cultura. Porque las marcas que realmente funcionan no solo comunican: significan.</p>
+    <p>No creo en publicar por publicar. Creo en construir percepción.</p>
+  </div>
+</section>
+
+<section id="contacto" class="section">
+  <div class="contact reveal">
+    <div>
+      <span class="kicker" style="color:#8b5e1e">Contacto</span>
+      <h2>Si tu marca necesita pensar mejor, <em style="color:#8b5e1e">hablemos</em>.</h2>
+    </div>
+    <div>
+      <p style="color:rgba(13,12,10,.7)">Disponible para proyectos de estrategia, comunicación, contenido y branding.</p>
+      <a class="btn" href="mailto:mariadelosmgarcia@gmail.com">mariadelosmgarcia@gmail.com</a><br>
+      <a class="btn" href="https://www.linkedin.com/in/mariadelosmilagrosgarcia/" target="_blank" rel="noreferrer">LinkedIn</a>
     </div>
   </div>
+</section>
 
-  <div class="card">
-    <img src="jockey-platos.webp">
-  </div>
+</main>
 
-  <div class="card">
-    <img src="jockey-tragos.webp">
-  </div>
+<footer>© 2026 Milagros García · Portfolio estratégico</footer>
 
-  <div class="card">
-    <img src="jockey-ambiente.webp">
-  </div>
-
-  <!-- DI SIMONTE -->
-  <div class="card">
-    <img src="di-pack-empanadas.webp">
-    <div class="overlay">
-      <h3>Di Simonte</h3>
-      <p>Rebranding & packaging</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="di-pack-sorrentinos.webp">
-  </div>
-
-  <div class="card">
-    <video controls>
-      <source src="carrete-di-simonte.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <!-- NUESTRO HOGAR -->
-  <div class="card">
-    <img src="nh-post.webp">
-    <div class="overlay">
-      <h3>Nuestro Hogar</h3>
-      <p>Contenido y lanzamiento</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="nh-lanzamiento.webp">
-  </div>
-
-  <!-- SOLARI -->
-  <div class="card">
-    <img src="solari-lanzamiento.webp">
-    <div class="overlay">
-      <h3>Solari Bienes Raíces</h3>
-      <p>Estrategia y comunicación</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="solari-venta.webp">
-  </div>
-
-  <!-- COCA -->
-  <div class="card">
-    <img src="coca-hero.webp">
-    <div class="overlay">
-      <h3>Coca-Cola</h3>
-      <p>Análisis de campaña</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="coca-publicidad.webp">
-  </div>
-
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button type="button" id="lightboxClose">Cerrar ×</button>
+  <img id="lightboxImg" alt="Imagen ampliada del portfolio">
 </div>
+
+<script>
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, {threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=document.getElementById('lightboxImg');
+
+document.querySelectorAll('.shot img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    lightboxImg.src=img.src;
+    lightboxImg.alt=img.alt || 'Imagen del portfolio';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden','false');
+  });
+});
+
+document.getElementById('lightboxClose').addEventListener('click',()=>{
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden','true');
+  lightboxImg.src='';
+});
+
+lightbox.addEventListener('click',(event)=>{
+  if(event.target===lightbox){
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden','true');
+    lightboxImg.src='';
+  }
+});
+
+document.addEventListener('keydown',(event)=>{
+  if(event.key==='Escape'){
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden','true');
+    lightboxImg.src='';
+  }
+});
+</script>
 
 </body>
 </html>
