@@ -63,7 +63,7 @@ h1{font-size:clamp(70px, 12vw, 180px); font-family:'Cormorant Garamond',serif; l
 h1 em{color:var(--accent); font-style:italic}
 .lead{ font-family:'Cormorant Garamond',serif; color:var(--muted); font-size:clamp(26px, 3.5vw, 48px); font-style:italic; max-width:900px; line-height: 1.1; }
 
-.project{ margin-bottom: 120px; }
+.project{ margin-bottom: 150px; }
 .project-top{ display:grid; grid-template-columns: 1fr 1fr; gap:40px; margin-bottom:40px; align-items: start; }
 .num{ color:var(--accent); font-size:11px; letter-spacing:.2em; text-transform:uppercase; display: block; margin-bottom: 10px; }
 h3{ font-family:'Cormorant Garamond',serif; font-size:clamp(40px, 6vw, 80px); font-weight: 400; line-height: 1; margin-bottom: 15px;}
@@ -75,9 +75,12 @@ h3{ font-family:'Cormorant Garamond',serif; font-size:clamp(40px, 6vw, 80px); fo
 .meta span{color:var(--text); font-size:14px; font-weight: 300;}
 
 .gallery{ display:grid; grid-template-columns: repeat(12, 1fr); gap:20px; }
-.shot{ grid-column: span 6; overflow:hidden; border-radius:2px; background:var(--panel); cursor:zoom-in; }
+.shot{ grid-column: span 6; overflow:hidden; border-radius:4px; background:var(--panel); cursor:zoom-in; position: relative; margin-bottom: 10px; }
 .shot.full{ grid-column: span 12; }
-.caption{ padding: 10px 0; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+.shot img{ transition: transform 0.5s ease; }
+.shot:hover img{ transform: scale(1.02); }
+
+.caption{ padding: 12px 0 30px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--soft); margin-bottom: 20px;}
 
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap:60px; }
 .about-box p { color:var(--muted); margin-bottom:24px; font-size:19px; font-weight: 300; }
@@ -127,17 +130,24 @@ h3{ font-family:'Cormorant Garamond',serif; font-size:clamp(40px, 6vw, 80px); fo
         <span class="num">01 · Strategic Case Study</span>
         <h3>Nike <em>Performance</em></h3>
       </div>
-      <div class="project-copy">Transformando el liderazgo estético en confianza técnica real para el maratonista argentino.[cite: 1]</div>
+      <div class="project-copy">Reposicionamiento para transformar el liderazgo estético en confianza técnica real para el maratonista argentino.</div>
     </div>
     <div class="meta">
-      <div><b>Type</b><span>Brand Strategy Study</span></div>
+      <div><b>Type</b><span>Brand Strategy Study[cite: 1]</span></div>
       <div><b>Focus</b><span>Endurance partner[cite: 1]</span></div>
       <div><b>Big Idea</b><span>42.195 Razones[cite: 1]</span></div>
     </div>
     <div class="gallery">
       <figure class="shot full"><img src="Gemini_Generated_Image_fr5l35fr5l35fr5l.png" alt="Nike Strategy"></figure>
+      <p class="caption">Concepto Visual: La resistencia en los kilómetros más críticos.[cite: 1]</p>
+      
       <figure class="shot"><img src="Gemini_Generated_Image_ajzutwajzutwajzu.png"></figure>
+      <figure class="shot"><img src="Gemini_Generated_Image_6sjmcn6sjmcn6sjm.png"></figure>
+      <p class="caption">Análisis Técnico y Realismo Sucio: Validando el esfuerzo real.[cite: 1]</p>
+      
+      <figure class="shot"><img src="Gemini_Generated_Image_vbtf57vbtf57vbtf.png"></figure>
       <figure class="shot"><img src="Gemini_Generated_Image_eby5nkeby5nkeby5.png"></figure>
+      <p class="caption">Integración NRC y Meta: Tecnología aplicada al servicio del corredor.[cite: 1]</p>
     </div>
   </article>
 
@@ -148,16 +158,27 @@ h3{ font-family:'Cormorant Garamond',serif; font-size:clamp(40px, 6vw, 80px); fo
         <span class="num">02 · Strategic Case Study</span>
         <h3>Jockey <em>Club</em></h3>
       </div>
-      <div class="project-copy">Reposicionamiento para elevar la percepción: de comunicación funcional a experiencia social premium.</div>
+      <div class="project-copy">Diagnóstico estratégico para elevar la percepción: de un club funcional a una experiencia de lifestyle premium.</div>
     </div>
     <div class="meta">
-      <div><b>Role</b><span>Brand Analysis</span></div>
+      <div><b>Role</b><span>Análisis de Marca</span></div>
       <div><b>Approach</b><span>Premium Lifestyle</span></div>
-      <div><b>Visual</b><span>Experience narrative</span></div>
+      <div><b>Goal</b><span>Orden Narrativo</span></div>
     </div>
     <div class="gallery">
-      <figure class="shot"><img src="jockey-hero.webp"></figure>
+      <figure class="shot full"><img src="jockey-hero.webp"></figure>
+      <p class="caption">Imagen principal: Reposicionando la marca hacia la aspiracionalidad social.</p>
+      
+      <figure class="shot"><img src="jockey-platos.webp"></figure>
+      <figure class="shot"><img src="jockey-tragos.webp"></figure>
+      <p class="caption">Gastronomía: Curaduría visual para momentos de consumo premium.</p>
+      
       <figure class="shot"><img src="jockey-terraza.webp"></figure>
+      <figure class="shot"><img src="jockey-ambiente.webp"></figure>
+      <p class="caption">Experiencia: La arquitectura del club como escenario social.</p>
+      
+      <figure class="shot full"><img src="jockey-amigos.webp"></figure>
+      <p class="caption">Sentido de pertenencia: Construyendo comunidad a través de la imagen.</p>
     </div>
   </article>
 
@@ -165,19 +186,27 @@ h3{ font-family:'Cormorant Garamond',serif; font-size:clamp(40px, 6vw, 80px); fo
   <article class="project reveal">
     <div class="project-top">
       <div>
-        <span class="num">03 · Identity & Content</span>
+        <span class="num">03 · Client Project: Identity</span>
         <h3>Di <em>Simonte</em></h3>
       </div>
-      <div class="project-copy">Construcción de una identidad artesanal contemporánea y estrategia de social storytelling.</div>
+      <div class="project-copy">Construcción de una estética artesanal contemporánea para ordenar la comunicación de producto.[cite: 2]</div>
     </div>
     <div class="meta">
-      <div><b>Client</b><span>Gastronomy</span></div>
-      <div><b>Service</b><span>Art Direction</span></div>
-      <div><b>Focus</b><span>Brand Storytelling</span></div>
+      <div><b>Client</b><span>Gastronomía[cite: 2]</span></div>
+      <div><b>Service</b><span>Identidad & Packaging[cite: 2]</span></div>
+      <div><b>Value</b><span>Premiumness artesanal[cite: 2]</span></div>
     </div>
     <div class="gallery">
-      <figure class="shot"><img src="di-logo.webp"></figure>
+      <figure class="shot full"><img src="di-logo.webp"></figure>
+      <p class="caption">Sistema Visual: Logotipo y paleta de colores con foco en la tradición.[cite: 2]</p>
+      
+      <figure class="shot"><img src="di-pack-empanadas.webp"></figure>
       <figure class="shot"><img src="di-pack-sorrentinos.webp"></figure>
+      <p class="caption">Packaging: Diseño funcional que comunica calidad y proceso manual.[cite: 2]</p>
+      
+      <figure class="shot"><img src="di-historia-1.webp"></figure>
+      <figure class="shot"><img src="di-historia-2.webp"></figure>
+      <p class="caption">Storytelling Digital: Historias diseñadas para generar cercanía y antojo.[cite: 2]</p>
     </div>
   </article>
 
@@ -185,19 +214,23 @@ h3{ font-family:'Cormorant Garamond',serif; font-size:clamp(40px, 6vw, 80px); fo
   <article class="project reveal">
     <div class="project-top">
       <div>
-        <span class="num">04 · Emotional Branding</span>
+        <span class="num">04 · Client Project: Emotional Branding</span>
         <h3>Nuestro <em>Hogar</em></h3>
       </div>
-      <div class="project-copy">Narrativa de marca centrada en el vínculo y la nostalgia para un producto artesanal con alma.</div>
+      <div class="project-copy">Narrativa de marca centrada en el vínculo, la nostalgia y la simpleza del recuerdo compartido.[cite: 2]</div>
     </div>
     <div class="meta">
-      <div><b>Client</b><span>Alfajores Artesanales</span></div>
-      <div><b>Service</b><span>Tono de voz & Contenido</span></div>
-      <div><b>Goal</b><span>Emotional Connection</span></div>
+      <div><b>Client</b><span>Emprendimiento[cite: 2]</span></div>
+      <div><b>Service</b><span>Tono de Voz & Contenido[cite: 2]</span></div>
+      <div><b>Insight</b><span>Hogar y Emoción[cite: 2]</span></div>
     </div>
     <div class="gallery">
-      <figure class="shot"><img src="nh-lanzamiento.webp"></figure>
+      <figure class="shot full"><img src="nh-lanzamiento.webp"></figure>
+      <p class="caption">Lanzamiento: Presentación de producto con foco en la calidez del hogar.[cite: 2]</p>
+      
       <figure class="shot"><img src="nh-post.webp"></figure>
+      <figure class="shot"><img src="nh-posteo.webp"></figure>
+      <p class="caption">Contenido: Estética suave y mensajes que invitan al vínculo emocional.[cite: 2]</p>
     </div>
   </article>
 
@@ -205,19 +238,23 @@ h3{ font-family:'Cormorant Garamond',serif; font-size:clamp(40px, 6vw, 80px); fo
   <article class="project reveal">
     <div class="project-top">
       <div>
-        <span class="num">05 · Content Strategy</span>
+        <span class="num">05 · Client Project: Content Strategy</span>
         <h3>Solari <em>Bienes Raíces</em></h3>
       </div>
-      <div class="project-copy">Humanización de marca inmobiliaria a través de una comunicación transparente y orientada al usuario.</div>
+      <div class="project-copy">Estrategia para humanizar el sector inmobiliario y construir confianza a través de información útil.[cite: 2]</div>
     </div>
     <div class="meta">
-      <div><b>Client</b><span>Real Estate</span></div>
-      <div><b>Service</b><span>Social Media Strategy</span></div>
-      <div><b>Approach</b><span>Trust building</span></div>
+      <div><b>Client</b><span>Real Estate[cite: 2]</span></div>
+      <div><b>Service</b><span>Social Media & Content[cite: 2]</span></div>
+      <div><b>Focus</b><span>Confianza & Transparencia[cite: 2]</span></div>
     </div>
     <div class="gallery">
-      <figure class="shot"><img src="solari-lanzamiento.webp"></figure>
+      <figure class="shot full"><img src="solari-lanzamiento.webp"></figure>
+      <p class="caption">Identidad Digital: Una cara humana para una marca de servicios profesionales.[cite: 2]</p>
+      
+      <figure class="shot"><img src="solari-venta.webp"></figure>
       <figure class="shot"><img src="solari-info.webp"></figure>
+      <p class="caption">Estrategia de Valor: Datos reales para ayudar en la toma de decisiones.[cite: 2]</p>
     </div>
   </article>
 
@@ -225,31 +262,40 @@ h3{ font-family:'Cormorant Garamond',serif; font-size:clamp(40px, 6vw, 80px); fo
   <article class="project reveal">
     <div class="project-top">
       <div>
-        <span class="num">06 · Conceptual Campaign</span>
+        <span class="num">06 · Conceptual Study</span>
         <h3>Coca-Cola <em>Ecológica</em></h3>
       </div>
-      <div class="project-copy">Campaña de sustentabilidad diseñada para conectar hábitos cotidianos con la recordación visual de marca.</div>
+      <div class="project-copy">Campaña de sustentabilidad pensada para integrar hábitos conscientes en la cultura masiva.</div>
     </div>
     <div class="meta">
-      <div><b>Type</b><span>Campaign Concept</span></div>
-      <div><b>Focus</b><span>Sustentabilidad</span></div>
-      <div><b>Service</b><span>Visual universe</span></div>
+      <div><b>Type</b><span>Campaña Conceptual</span></div>
+      <div><b>Service</b><span>Visual Universe</span></div>
+      <div><b>Focus</b><span>Acción Verde</span></div>
     </div>
     <div class="gallery">
       <figure class="shot full"><img src="coca-hero.webp"></figure>
+      <p class="caption">Key Visual: Impacto masivo con un mensaje de sustentabilidad directa.</p>
+      
+      <figure class="shot"><img src="coca-folleto.webp"></figure>
       <figure class="shot"><img src="coca-publicidad.webp"></figure>
-      <figure class="shot"><img src="coca-super.webp"></figure>
+      <p class="caption">Soportes: Bajada de campaña a piezas gráficas y vía pública.</p>
+      
+      <figure class="shot full"><img src="coca-super.webp"></figure>
+      <p class="caption">Activación: Aplicación del concepto ecológico en el punto de venta.</p>
     </div>
   </article>
 
 </section>
 
+<!-- SECCIÓN SOBRE MÍ ACTUALIZADA -->
 <section id="sobre-mi" class="section">
   <div class="about-grid reveal">
     <div><h2>Mirar más allá de la <em>fachada</em>.</h2></div>
     <div class="about-box">
-      <p>Mi formación en arquitectura me enseñó a no quedarme con lo que está a la altura de la mirada. Desarmo marcas para entender sus cimientos y diseño narrativas que construyen pertenencia.</p>
-      <p>Crecí rodeada de fútbol, viendo cómo una marca se convierte en identidad heredada. Entiendo que una marca solo está viva cuando logra que alguien se sienta parte de algo más grande.</p>
+      <p>Mi formación en arquitectura me enseñó a no quedarme con lo que está a la altura de la mirada. Hoy, aplico ese mismo lente estratégico al branding: <strong>desarmo marcas para entender sus cimientos y diseño narrativas que construyen pertenencia.</strong></p>
+      
+      <p>Crecí rodeada de fútbol en Argentina, viendo cómo una marca se convierte en identidad heredada. Entiendo que una marca solo está viva cuando logra que alguien se sienta parte de algo más grande.</p>
+      
       <p>Soy una lectora voraz y pintora de procesos. Mi enfoque combina la rigurosidad del diagnóstico con la calidez de lo humano. No busco solo optimizar números, busco revivir significados.</p>
     </div>
   </div>
@@ -265,12 +311,12 @@ h3{ font-family:'Cormorant Garamond',serif; font-size:clamp(40px, 6vw, 80px); fo
 
 </main>
 
-<footer>© 2026 Milagros García</footer>
+<footer>© 2026 Milagros García · Creative Strategy</footer>
 
 <div class="lightbox" id="lightbox"><img id="lightboxImg"></div>
 
 <script>
-const observer = new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, {threshold:.1});
+const observer = new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, {threshold:.05});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 const lightbox=document.getElementById('lightbox'); const lightboxImg=document.getElementById('lightboxImg');
 document.querySelectorAll('.shot img').forEach(img=>{ img.addEventListener('click',()=>{ lightboxImg.src=img.src; lightbox.classList.add('open'); }); });
