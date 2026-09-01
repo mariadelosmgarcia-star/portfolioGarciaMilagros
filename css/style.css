@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TOKENS & VARIABLES — PALETA CLARA DINÁMICA
+   TOKENS & VARIABLES — PALETA CLARA DINÁMICA & POWER
    ========================================================================== */
 :root {
   --bg-main: #F6F4EF;         /* Fondo tiza / arena claro */
@@ -76,7 +76,6 @@ img {
   font-weight: 600;
   font-size: 0.9rem;
 }
-
 .nav-links a:hover { color: var(--cobalt); }
 
 .nav-btn {
@@ -175,7 +174,7 @@ img {
 }
 
 /* ==========================================================================
-   SECCIONES GLOBALES & ENCABEZADOS
+   SECCIONES GLOBALES
    ========================================================================== */
 .section-container, .featured-case {
   max-width: var(--max-w);
@@ -240,6 +239,23 @@ img {
   font-size: 1.25rem;
 }
 
+.clean-list {
+  list-style: none;
+}
+.clean-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: var(--dark);
+}
+.clean-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: bold;
+}
+
 .numbered-list {
   padding-left: 1.2rem;
 }
@@ -285,7 +301,6 @@ img {
   display: block;
 }
 
-/* Tarjeta profunda de estrategia My Gym */
 .strategy-deep-card {
   background: var(--bg-card);
   border: 2px solid var(--cobalt);
@@ -357,7 +372,7 @@ img {
 }
 
 /* ==========================================================================
-   PROYECTOS & CASOS DE ESTUDIO (CARDS MASONRY)
+   PROYECTOS & CASOS DE ESTUDIO
    ========================================================================== */
 .projects-masonry {
   display: grid;
@@ -444,6 +459,52 @@ img {
   color: var(--muted);
 }
 
+/* Galerías Dinámicas Específicas */
+.gallery-grid-disimonte {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+.gallery-grid-disimonte img {
+  border: 1px solid var(--border-line);
+  border-radius: 3px;
+  aspect-ratio: 1/1;
+}
+
+.video-container {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--border-line);
+  padding-top: 1rem;
+}
+.case-video {
+  width: 100%;
+  max-width: 480px;
+  border: 2px solid var(--border-line);
+  border-radius: 4px;
+}
+
+.gallery-grid-nike {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.gallery-grid-nike img {
+  border: 1px solid var(--border-line);
+  border-radius: 3px;
+  aspect-ratio: 4/3;
+}
+
+.chart-wrapper {
+  margin: 1.5rem 0;
+  border: 1px solid var(--border-line);
+  border-radius: 4px;
+  overflow: hidden;
+  background: #FFF;
+}
+.case-chart { width: 100%; }
+
 .mini-gallery-dynamic {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -459,11 +520,11 @@ img {
 .case-footnote {
   font-size: 0.8rem;
   color: var(--muted);
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   font-style: italic;
 }
 
-/* Grids de Puntos de Casos de Estudio */
+/* Grids de Casos de Estudio */
 .study-details-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -481,10 +542,11 @@ img {
   margin-bottom: 0.3rem;
 }
 .highlight-box {
-  grid-column: 1 / -1;
   background: #F0F4FF;
   border-left: 4px solid var(--cobalt);
-  padding: 0.8rem 1rem;
+  padding: 1rem;
+  margin-top: 1.2rem;
+  border-radius: 0 4px 4px 0;
 }
 
 /* ==========================================================================
@@ -613,6 +675,8 @@ footer {
   .about-photo-wrapper { max-width: 220px; margin: 0 auto; }
   .case-gallery { grid-template-columns: 1fr; }
   .study-details-grid { grid-template-columns: 1fr; }
+  .gallery-grid-disimonte { grid-template-columns: repeat(3, 1fr); }
+  .gallery-grid-nike { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
@@ -622,5 +686,6 @@ footer {
     align-items: flex-start;
   }
   .nav-links { flex-wrap: wrap; gap: 1rem; }
-  .mini-gallery-dynamic { grid-template-columns: 1fr; }
+  .mini-gallery-dynamic,
+  .gallery-grid-disimonte { grid-template-columns: repeat(2, 1fr); }
 }
