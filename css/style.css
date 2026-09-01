@@ -1,22 +1,21 @@
 /* ==========================================================================
-   ESTÉTICA EDITORIAL DE ALTO NIVEL: BOUTIQUE & SOFISTICADA
+   ESTÉTICA EDITORIAL BOUTIQUE — FEMENINA, CÁLIDA & DE IMPACTO
    ========================================================================== */
 :root {
-  --bg-sand: #F8F6F0;           /* Fondo lino/arena suave de lectura */
-  --card-bg: #FFFFFF;           /* Blanco inmaculado */
-  --card-sub: #F0EDE4;          /* Contenedores secundarios */
+  --bg-sand: #FAF7F2;           /* Fondo lino / arena cálido */
+  --card-bg: #FFFFFF;           /* Blanco limpio */
+  --card-sub: #F2ECE4;          /* Contenedores y widgets */
   
   --ink: #1B1A18;               /* Negro carbón editorial */
-  --terracotta: #B85942;        /* Terracota refinado (acento) */
-  --terracotta-soft: #F5EAE6;   /* Fondo rosa/terracota tenue */
+  --terracotta: #B85942;        /* Terracota refinado */
+  --terracotta-soft: #F5EAE6;   /* Rosa empolvado suave */
   --stone: #6B6760;             /* Texto secundario cálido */
-  --border: #E2DDD2;            /* Líneas finas elegantes */
+  --border: #E8E2D8;            /* Líneas finas */
   
   --font-serif: 'Playfair Display', serif;
   --font-display: 'Italiana', serif;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
   
-  --radius-sm: 8px;
   --radius-lg: 20px;
   --max-w: 1080px;
 }
@@ -40,16 +39,8 @@ body {
   padding: 1.5rem 1rem 3rem;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-  object-fit: cover;
-}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; object-fit: cover; }
 
 /* ==========================================================================
    HEADER
@@ -58,7 +49,7 @@ img {
   max-width: var(--max-w);
   margin: 0 auto 3.5rem;
   padding: 1.2rem 2.2rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border);
   border-radius: 60px;
@@ -136,9 +127,9 @@ img {
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 5.8vw, 4.2rem);
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
   font-weight: 400;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   margin-bottom: 1.8rem;
 }
@@ -171,24 +162,15 @@ img {
   transition: all 0.2s ease;
 }
 
-.btn-primary {
-  background: var(--ink);
-  color: #FFF;
-}
-.btn-primary:hover {
-  background: var(--terracotta);
-  transform: translateY(-2px);
-}
+.btn-primary { background: var(--ink); color: #FFF; }
+.btn-primary:hover { background: var(--terracotta); transform: translateY(-2px); }
 
 .btn-secondary, .btn-cv {
   background: var(--card-bg);
   color: var(--ink);
   border: 1px solid var(--border);
 }
-.btn-secondary:hover, .btn-cv:hover {
-  border-color: var(--terracotta);
-  color: var(--terracotta);
-}
+.btn-secondary:hover, .btn-cv:hover { border-color: var(--terracotta); color: var(--terracotta); }
 
 /* ==========================================================================
    SOBRE MÍ
@@ -203,8 +185,6 @@ img {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
 }
-
-.about-photo-wrapper { position: relative; }
 
 .photo-frame {
   border-radius: 16px;
@@ -274,25 +254,56 @@ img {
   border-radius: 20px;
 }
 
-/* ==========================================================================
-   FEATURED MY GYM ONLINE
-   ========================================================================== */
-.section-title-wrap {
-  margin-bottom: 2rem;
+/* Experiencia & Clientes en Sobre Mí */
+.experience-strip {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
 }
 
-.section-title-wrap h2 {
+.client-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.client-mini-card {
+  background: var(--bg-sand);
+  border: 1px solid var(--border);
+  padding: 1.2rem 1.4rem;
+  border-radius: 12px;
+}
+
+.client-mini-card h4 {
   font-family: var(--font-serif);
-  font-size: 2.4rem;
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
 }
 
-.section-title-wrap .subtitle {
-  color: var(--stone);
-  font-size: 1.05rem;
-  margin-top: 0.3rem;
+.client-role {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
 }
+
+.client-mini-card p {
+  font-size: 0.88rem;
+  color: var(--stone);
+  line-height: 1.45;
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   CASOS & CLIENTES
+   ========================================================================== */
+.section-title-wrap { margin-bottom: 2rem; }
+.section-title-wrap h2 { font-family: var(--font-serif); font-size: 2.4rem; font-weight: 400; }
 
 .case-card-container {
   background: var(--card-bg);
@@ -300,167 +311,76 @@ img {
   border-radius: var(--radius-lg);
   padding: 3rem;
 }
+.space-top { margin-top: 2.5rem; }
+
+.project-head-block { margin-bottom: 1.5rem; }
+.project-head-block h3 { font-family: var(--font-serif); font-size: 1.8rem; margin: 0.4rem 0; }
+.project-head-block .subtitle { color: var(--stone); font-size: 1rem; }
+
+.tag-live {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2D7A38;
+  background: #E8F5E9;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+}
+
+.tag-meta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  letter-spacing: 0.05em;
+}
+
+.case-paragraph { color: var(--stone); font-size: 1rem; margin-bottom: 1.5rem; }
 
 .case-split-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  margin-bottom: 2.5rem;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
+.case-box h4 { font-family: var(--font-serif); font-size: 1.2rem; color: var(--terracotta); margin-bottom: 0.5rem; }
+.case-box p { color: var(--stone); font-size: 0.95rem; }
 
-.case-box h3 {
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
-  color: var(--terracotta);
-  margin-bottom: 0.8rem;
-}
-
-.case-box p {
-  color: var(--stone);
-  font-size: 0.95rem;
-}
-
-/* Métricas Dashboard */
 .metrics-dashboard {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 1.2rem;
   background: var(--bg-sand);
-  padding: 1.8rem;
+  padding: 1.6rem;
   border-radius: 14px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
-
 .m-card .m-num {
   display: block;
   font-family: var(--font-serif);
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: var(--ink);
 }
+.m-card.primary-m-card .m-num { color: var(--terracotta); }
+.m-card .m-txt { font-size: 0.78rem; font-weight: 600; color: var(--stone); }
 
-.m-card.primary-m-card .m-num {
-  color: var(--terracotta);
-}
-
-.m-card .m-txt {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--stone);
-}
-
-/* Humanización Lucía */
-.story-highlight-box {
-  display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
-  gap: 2rem;
-  background: var(--terracotta-soft);
-  border-radius: 14px;
-  padding: 2rem;
-  align-items: center;
-  margin-bottom: 2.5rem;
-}
-
-.story-text h4 {
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
-  color: var(--terracotta);
-  margin-bottom: 0.6rem;
-}
-
-.story-text p {
-  font-size: 0.95rem;
-  color: var(--ink);
-}
-
-.story-image img {
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  aspect-ratio: 4/3;
-  width: 100%;
-}
-
-.evidence-gallery {
+.evidence-gallery,
+.jockey-showcase-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
 }
-.evidence-gallery .full-fig { grid-column: 1 / -1; }
-
-.evidence-gallery img {
+.evidence-gallery img,
+.jockey-showcase-grid img {
   border-radius: 10px;
   border: 1px solid var(--border);
   width: 100%;
+  aspect-ratio: 4/3;
 }
-
-.evidence-gallery figcaption {
+.evidence-gallery figcaption,
+.jockey-showcase-grid figcaption {
   font-size: 0.8rem;
   color: var(--stone);
   margin-top: 0.5rem;
   text-align: center;
-}
-
-/* ==========================================================================
-   MASONRY PROYECTOS & CASOS
-   ========================================================================== */
-.projects-masonry {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-}
-
-.project-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 2.2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.project-card.full-span { grid-column: 1 / -1; }
-
-.project-cover-wrap {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--border);
-}
-
-.project-cover-wrap img { width: 100%; aspect-ratio: 16/9; }
-
-.card-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: var(--ink);
-  color: #FFF;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 0.3rem 0.7rem;
-  border-radius: 20px;
-}
-
-.meta-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--terracotta);
-  letter-spacing: 0.05em;
-  display: inline-block;
-  margin-bottom: 0.4rem;
-}
-
-.project-info h3 {
-  font-family: var(--font-serif);
-  font-size: 1.6rem;
-  font-weight: 400;
-  margin-bottom: 0.8rem;
-}
-
-.project-info p {
-  color: var(--stone);
-  font-size: 0.95rem;
 }
 
 /* Di Simonte Showcase */
@@ -468,9 +388,8 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   gap: 0.8rem;
-  margin-top: 1.5rem;
+  margin-top: 1.2rem;
 }
-
 .disimonte-showcase img {
   border-radius: 8px;
   border: 1px solid var(--border);
@@ -479,28 +398,16 @@ img {
 }
 
 /* Casos de Estudio Especiales */
-.study-card {
-  background: #FFF;
-}
-
 .case-meta-points {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  margin: 1.5rem 0;
+  margin: 1.5rem 0 2rem;
   background: var(--bg-sand);
   padding: 1.5rem;
   border-radius: 12px;
 }
-
-.point-box strong {
-  display: block;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  color: var(--terracotta);
-  margin-bottom: 0.3rem;
-}
-
+.point-box strong { display: block; font-size: 0.8rem; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.3rem; }
 .point-box p { font-size: 0.9rem; color: var(--stone); }
 
 .nike-gallery-grid {
@@ -508,7 +415,6 @@ img {
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
 }
-
 .nike-gallery-grid img {
   border-radius: 8px;
   border: 1px solid var(--border);
@@ -519,9 +425,7 @@ img {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  margin-top: 1.5rem;
 }
-
 .coca-gallery-grid img {
   border-radius: 8px;
   border: 1px solid var(--border);
@@ -531,29 +435,20 @@ img {
 /* ==========================================================================
    CONTACTO
    ========================================================================== */
-.contact-module {
-  text-align: center;
-}
-
+.contact-module { text-align: center; }
 .contact-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 4rem 2rem;
 }
-
 .contact-card h2 {
   font-family: var(--font-serif);
   font-size: clamp(2.2rem, 4vw, 3rem);
   font-weight: 400;
   margin: 0.6rem 0 0.8rem;
 }
-
-.contact-card p {
-  color: var(--stone);
-  font-size: 1.05rem;
-  margin-bottom: 2.5rem;
-}
+.contact-card p { color: var(--stone); font-size: 1.05rem; margin-bottom: 2.5rem; }
 
 .contact-links-row {
   display: flex;
@@ -572,7 +467,6 @@ img {
   border-radius: 40px;
   transition: all 0.2s ease;
 }
-
 .contact-chip:hover {
   background: var(--terracotta);
   color: #FFF;
@@ -593,27 +487,12 @@ img {
 @media (max-width: 860px) {
   .about-grid,
   .case-split-grid,
-  .projects-masonry,
-  .story-highlight-box,
-  .case-meta-points {
+  .case-meta-points,
+  .evidence-gallery,
+  .jockey-showcase-grid {
     grid-template-columns: 1fr;
   }
-  
-  .about-grid, .case-card-container {
-    padding: 2rem;
-  }
-  
-  .header {
-    flex-direction: column;
-    gap: 1.2rem;
-    border-radius: 20px;
-  }
-  
-  .evidence-gallery {
-    grid-template-columns: 1fr;
-  }
-  
-  .coca-gallery-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  .about-grid, .case-card-container { padding: 2rem; }
+  .header { flex-direction: column; gap: 1.2rem; border-radius: 20px; }
+  .coca-gallery-grid { grid-template-columns: 1fr 1fr; }
 }
