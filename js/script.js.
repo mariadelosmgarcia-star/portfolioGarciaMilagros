@@ -1,12 +1,56 @@
-// script.js
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("Portfolio de Milagros García cargado correctamente.");
+// Localizador avanzado de imágenes para GitHub / Cloudflare
+function handleImageFallbacks(img) {
+  const currentSrc = img.getAttribute('src');
+  if (!currentSrc) return;
 
-  // Oculta de forma limpia cualquier imagen que no logre cargar
-  const images = document.querySelectorAll("img");
-  images.forEach((img) => {
-    img.addEventListener("error", () => {
-      img.style.display = "none";
-    });
-  });
+  const retry = parseInt(img.dataset.retries || 0);
+  if (retry >= 6) {
+    img.style.display = 'none';
+    return;
+  }
+
+  img.dataset.retries = retry + 1;
+  const fileName = currentSrc.split('/').pop();
+
+  if (retry === 0) {
+    // Intercambiar extensiones comunes si no carga
+    if (fileName.endsWith('.jpg')) {
+      img.src = fileName.replace('.jpg', '.png');
+      return;
+    }
+    if (fileName.endsWith('.png')) {
+      img.src = fileName.replace('.png', '.jpg');
+      return;
+    }
+    // Probar quitando extensiones dobles
+    let cleanName = fileName
+      .replace('.png.png', '.png')
+      .replace('.jpeg.jpeg', '.jpeg')
+      .replace('.png.webp', '.webp')
+      .replace('....', '');
+    img.src = cleanName;
+  } else if (retry === 1) {
+    // Probar en la carpeta images/
+    img.src = 'images/' + fileName;
+  } else if (retry === 2) {
+    // Probar nombres alternativos para My Gym y Nike
+    if (fileName.includes('anuncios-de-mi-gimnasio')) {
+      img.src = 'mygym-ads-antes.png';
+    } else if (fileName.includes('migimnasio-crecimiento')) {
+      img.src = 'mygym-crecimiento.png';
+    } else if (fileName.includes('gráfico-índice-marca-nike') || fileName.includes('grafico-indice-marca-nike')) {
+      img.src = 'nike-brand-index-chart.png';
+    }
+  } else if (retry === 3) {
+    // Probar en images/ con nombre limpio
+    let cleanName = fileName
+      .replace('.png.png', '.png')
+      .replace('.jpeg.jpeg', '.jpeg')
+      .replace('.png.webp', '.webp');
+    img.src = 'images/' + cleanName;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Portfolio Milagros García — Sunset & Caribbean Edition cargado.");
 });
