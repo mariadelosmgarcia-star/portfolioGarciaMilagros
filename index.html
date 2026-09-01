@@ -1,912 +1,387 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Milagros García | Creative Strategist</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-  --bg:#f6f3ee;
-  --panel:#ffffff;
-  --text:#111111;
-  --muted:#6e6e6e;
-  --soft:rgba(0,0,0,.08);
-  --accent:#39c7bb;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:'Outfit',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-  letter-spacing:-0.01em;
-}
-
-img{
-  width:100%;
-  display:block;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-.section{
-  padding:clamp(90px,12vw,160px) clamp(24px,7vw,110px);
-  border-top:1px solid var(--soft);
-}
-
-.nav{
-  position:sticky;
-  top:0;
-  z-index:999;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:24px clamp(24px,6vw,90px);
-  background:rgba(246,243,238,.82);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--soft);
-}
-
-.logo{
-  font-family:'Cormorant Garamond',serif;
-  font-size:30px;
-  font-style:italic;
-}
-
-.links{
-  display:flex;
-  list-style:none;
-  gap:32px;
-}
-
-.links a{
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.2em;
-  color:var(--muted);
-  transition:.3s;
-}
-
-.links a:hover{
-  color:var(--accent);
-}
-
-.hero{
-  min-height:92vh;
-  display:flex;
-  align-items:center;
-  padding:80px clamp(24px,8vw,120px);
-}
-
-.hero-inner{
-  max-width:1100px;
-}
-
-.num{
-  display:block;
-  margin-bottom:18px;
-  color:var(--accent);
-  text-transform:uppercase;
-  letter-spacing:.2em;
-  font-size:11px;
-}
-
-h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(76px,13vw,190px);
-  line-height:.85;
-  font-weight:400;
-  margin-bottom:32px;
-}
-
-h1 em,
-h2 em,
-h3 em{
-  color:var(--accent);
-  font-style:italic;
-}
-
-.lead{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(28px,4vw,54px);
-  line-height:1.05;
-  max-width:850px;
-  color:#444;
-  font-style:italic;
-}
-
-.label{
-  margin-bottom:60px;
-}
-
-.label span{
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.2em;
-  color:var(--accent);
-}
-
-.project{
-  margin-bottom:180px;
-}
-
-.project-top{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:start;
-  margin-bottom:60px;
-}
-
-h3{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(44px,7vw,88px);
-  line-height:.95;
-  font-weight:400;
-  margin-top:10px;
-}
-
-.project-copy{
-  font-size:20px;
-  color:#3f3f3f;
-  max-width:540px;
-}
-
-.meta{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  margin-top:35px;
-}
-
-.meta div{
-  border-left:1px solid var(--accent);
-  padding-left:14px;
-}
-
-.meta b{
-  display:block;
-  margin-bottom:6px;
-  font-size:10px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--accent);
-}
-
-.meta span{
-  font-size:14px;
-  color:var(--muted);
-}
-
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(12,1fr);
-  gap:30px;
-  align-items:start;
-}
-
-.shot{
-  overflow:hidden;
-  border-radius:18px;
-  background:#e9e9e9;
-  position:relative;
-}
-
-.shot img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .7s ease;
-}
-
-.shot:hover img{
-  transform:scale(1.03);
-}
-
-.large{
-  grid-column:span 8;
-}
-
-.medium{
-  grid-column:span 6;
-}
-
-.small{
-  grid-column:span 4;
-}
-
-.full{
-  grid-column:span 12;
-}
-
-.tall img{
-  aspect-ratio:4/5;
-}
-
-.wide img{
-  aspect-ratio:16/9;
-}
-
-.caption{
-  grid-column:span 12;
-  color:var(--muted);
-  font-size:11px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  padding-bottom:10px;
-}
-
-.about-grid{
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:90px;
-  align-items:center;
-}
-
-.about-photo img{
-  width:100%;
-  height:760px;
-  object-fit:cover;
-  border-radius:24px;
-  filter:saturate(.95);
-}
-
-h2{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(44px,6vw,88px);
-  line-height:.95;
-  font-weight:400;
-  margin-bottom:35px;
-}
-
-.about-box p{
-  margin-bottom:26px;
-  color:#444;
-  font-size:19px;
-  font-weight:300;
-}
-
-.contact{
-  text-align:center;
-}
-
-.contact h2{
-  margin-bottom:30px;
-}
-
-.btn{
-  display:inline-block;
-  padding:20px 38px;
-  border:1px solid var(--accent);
-  color:var(--accent);
-  text-transform:uppercase;
-  letter-spacing:.18em;
-  font-size:11px;
-  transition:.4s;
-  margin-top:12px;
-}
-
-.btn:hover{
-  background:var(--accent);
-  color:#fff;
-}
-
-.linkedin{
-  margin-top:40px;
-  display:block;
-  font-size:12px;
-  letter-spacing:.2em;
-  color:var(--muted);
-}
-
-footer{
-  padding:40px;
-  text-align:center;
-  color:var(--muted);
-  font-size:14px;
-  border-top:1px solid var(--soft);
-}
-
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal.visible{
-  opacity:1;
-  transform:none;
-}
-
-.lightbox{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.95);
-  z-index:9999;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:40px;
-}
-
-.lightbox.open{
-  display:flex;
-}
-
-.lightbox img{
-  max-width:90%;
-  max-height:90vh;
-  border-radius:12px;
-}
-
-@media(max-width:900px){
-
-  .project-top,
-  .meta,
-  .about-grid{
-    grid-template-columns:1fr;
-  }
-
-  .large,
-  .medium,
-  .small,
-  .full{
-    grid-column:span 12;
-  }
-
-  .links{
-    display:none;
-  }
-
-  .about-photo img{
-    height:auto;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milagros García — Estrategia de marca & comunicación</title>
+  <meta name="description" content="Portfolio de Milagros García: estrategia de marca, comunicación y optimización de performance digital.">
+  
+  <!-- Tipografías de Alto Impacto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<nav class="nav">
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="#" class="logo">MILAGROS GARCÍA<span class="dot">.</span></a>
+    <nav class="nav-links">
+      <a href="#trabajo">Trabajo</a>
+      <a href="#casos">Casos de estudio</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto" class="nav-btn">Contacto</a>
+    </nav>
+  </header>
 
-  <a href="#" class="logo">Milagros García</a>
-
-  <ul class="links">
-    <li><a href="#proyectos">Proyectos</a></li>
-    <li><a href="#sobre-mi">Sobre mí</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-
-</nav>
-
-<header class="hero">
-
-  <div class="hero-inner reveal">
-
-    <span class="num">Creative Strategist · Brand Narratives · Identity</span>
-
-    <h1>
-      Milagros<br>
-      <em>García</em>
-    </h1>
-
-    <p class="lead">
-      Pienso marcas como quien construye identidad:
-      desde la emoción, la cultura y lo que hace que alguien quiera pertenecer.
-    </p>
-
-  </div>
-
-</header>
-
-<main>
-
-<section id="proyectos" class="section">
-
-  <div class="label">
-    <span>Selected Work</span>
-  </div>
-
-  <!-- NIKE -->
-
-  <article class="project reveal">
-
-    <div class="project-top">
-
-      <div>
-        <span class="num">Strategic Exploration</span>
-        <h3>Nike<br><em>42.195 razones</em></h3>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-top-badges">
+        <span class="badge badge-accent">ESTRATEGIA · COMUNICACIÓN · PERFORMANCE</span>
+        <span class="badge badge-live">DISPONIBLE PARA PROYECTOS</span>
       </div>
-
-      <div>
-
-        <p class="project-copy">
-          Replanteo estratégico para transformar el liderazgo estético en confianza técnica real dentro de la cultura runner argentina.
-        </p>
-
-        <div class="meta">
-          <div>
-            <b>Tipo</b>
-            <span>Brand Exploration</span>
-          </div>
-
-          <div>
-            <b>Enfoque</b>
-            <span>Running Culture</span>
-          </div>
-
-          <div>
-            <b>Idea</b>
-            <span>Esfuerzo real</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="gallery">
-
-      <figure class="shot full wide">
-        <img src="Gemini_Generated_Image_fr5l35fr5l35fr5l.png">
-      </figure>
-
-      <div class="caption">
-        La resistencia como narrativa visual.
-      </div>
-
-      <figure class="shot large">
-        <img src="Gemini_Generated_Image_ajzutwajzutwajzu.png">
-      </figure>
-
-      <figure class="shot small tall">
-        <img src="Gemini_Generated_Image_6sjmcn6sjmcn6sjm.png">
-      </figure>
-
-      <figure class="shot medium">
-        <img src="Gemini_Generated_Image_vbtf57vbtf57vbtf.png">
-      </figure>
-
-      <figure class="shot medium">
-        <img src="Gemini_Generated_Image_eby5nkeby5nkeby5.png">
-      </figure>
-
-    </div>
-
-  </article>
-
-  <!-- JOCKEY -->
-
-  <article class="project reveal">
-
-    <div class="project-top">
-
-      <div>
-        <span class="num">Strategic Exploration</span>
-        <h3>Jockey Club<br><em>Pertenecer también se diseña</em></h3>
-      </div>
-
-      <div>
-
-        <p class="project-copy">
-          Diagnóstico visual y estratégico para transformar un club tradicional en una experiencia lifestyle contemporánea.
-        </p>
-
-        <div class="meta">
-          <div>
-            <b>Tipo</b>
-            <span>Brand Analysis</span>
-          </div>
-
-          <div>
-            <b>Enfoque</b>
-            <span>Premium Lifestyle</span>
-          </div>
-
-          <div>
-            <b>Objetivo</b>
-            <span>Pertenencia</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="gallery">
-
-      <figure class="shot full">
-        <img src="jockey-hero.webp">
-      </figure>
-
-      <div class="caption">
-        Aspiracionalidad social y narrativa de exclusividad.
-      </div>
-
-      <figure class="shot medium">
-        <img src="jockey-platos.webp">
-      </figure>
-
-      <figure class="shot medium">
-        <img src="jockey-tragos.webp">
-      </figure>
-
-      <figure class="shot small tall">
-        <img src="jockey-terraza.webp">
-      </figure>
-
-      <figure class="shot large">
-        <img src="jockey-ambiente.webp">
-      </figure>
-
-      <figure class="shot full">
-        <img src="jockey-amigos.webp">
-      </figure>
-
-    </div>
-
-  </article>
-
-  <!-- DI SIMONTE -->
-
-  <article class="project reveal">
-
-    <div class="project-top">
-
-      <div>
-        <span class="num">Client Work</span>
-        <h3>Di <em>Simonte</em></h3>
-      </div>
-
-      <div>
-
-        <p class="project-copy">
-          Construcción de una identidad artesanal contemporánea para ordenar visualmente la comunicación de producto.
-        </p>
-
-        <div class="meta">
-          <div>
-            <b>Cliente</b>
-            <span>Gastronomía</span>
-          </div>
-
-          <div>
-            <b>Servicio</b>
-            <span>Branding & Packaging</span>
-          </div>
-
-          <div>
-            <b>Valor</b>
-            <span>Tradición artesanal</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="gallery">
-
-      <figure class="shot full">
-        <img src="di-logo.webp">
-      </figure>
-
-      <figure class="shot medium">
-        <img src="di-pack-empanadas.webp">
-      </figure>
-
-      <figure class="shot medium">
-        <img src="di-pack-sorrentinos.webp">
-      </figure>
-
-      <figure class="shot small tall">
-        <img src="di-historia-1.webp">
-      </figure>
-
-      <figure class="shot large">
-        <img src="di-historia-2.webp">
-      </figure>
-
-    </div>
-
-  </article>
-
-  <!-- NUESTRO HOGAR -->
-
-  <article class="project reveal">
-
-    <div class="project-top">
-
-      <div>
-        <span class="num">Client Work</span>
-        <h3>Nuestro <em>Hogar</em></h3>
-      </div>
-
-      <div>
-
-        <p class="project-copy">
-          Branding emocional construido desde la nostalgia, el vínculo y la memoria afectiva.
-        </p>
-
-        <div class="meta">
-          <div>
-            <b>Cliente</b>
-            <span>Food Brand</span>
-          </div>
-
-          <div>
-            <b>Servicio</b>
-            <span>Storytelling & Content</span>
-          </div>
-
-          <div>
-            <b>Insight</b>
-            <span>Emoción compartida</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="gallery">
-
-      <figure class="shot full">
-        <img src="nh-lanzamiento.webp">
-      </figure>
-
-      <figure class="shot medium">
-        <img src="nh-post.webp">
-      </figure>
-
-      <figure class="shot medium">
-        <img src="nh-posteo.webp">
-      </figure>
-
-    </div>
-
-  </article>
-
-  <!-- SOLARI -->
-
-  <article class="project reveal">
-
-    <div class="project-top">
-
-      <div>
-        <span class="num">Client Work</span>
-        <h3>Solari<br><em>Bienes Raíces</em></h3>
-      </div>
-
-      <div>
-
-        <p class="project-copy">
-          Estrategia digital para humanizar el sector inmobiliario y construir confianza desde la información útil.
-        </p>
-
-        <div class="meta">
-          <div>
-            <b>Cliente</b>
-            <span>Real Estate</span>
-          </div>
-
-          <div>
-            <b>Servicio</b>
-            <span>Content Strategy</span>
-          </div>
-
-          <div>
-            <b>Valor</b>
-            <span>Confianza & claridad</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="gallery">
-
-      <figure class="shot full">
-        <img src="solari-lanzamiento.webp">
-      </figure>
-
-      <figure class="shot medium">
-        <img src="solari-venta.webp">
-      </figure>
-
-      <figure class="shot medium">
-        <img src="solari-info.webp">
-      </figure>
-
-    </div>
-
-  </article>
-
-  <!-- COCA -->
-
-  <article class="project reveal">
-
-    <div class="project-top">
-
-      <div>
-        <span class="num">Conceptual Exploration</span>
-        <h3>Coca-Cola<br><em>Lo que dejamos después</em></h3>
-      </div>
-
-      <div>
-
-        <p class="project-copy">
-          Campaña conceptual sobre sustentabilidad y cultura de consumo consciente.
-        </p>
-
-        <div class="meta">
-          <div>
-            <b>Tipo</b>
-            <span>Campaign Concept</span>
-          </div>
-
-          <div>
-            <b>Enfoque</b>
-            <span>Sustainability</span>
-          </div>
-
-          <div>
-            <b>Idea</b>
-            <span>Impacto cultural</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="gallery">
-
-      <figure class="shot full">
-        <img src="coca-hero.webp">
-      </figure>
-
-      <figure class="shot medium">
-        <img src="coca-folleto.webp">
-      </figure>
-
-      <figure class="shot medium">
-        <img src="coca-publicidad.webp">
-      </figure>
-
-      <figure class="shot full">
-        <img src="coca-super.webp">
-      </figure>
-
-    </div>
-
-  </article>
-
-</section>
-
-<section id="sobre-mi" class="section">
-
-  <div class="about-grid reveal">
-
-    <div class="about-photo">
-      <img src="Milagrosperfil.png" alt="Milagros García">
-    </div>
-
-    <div class="about-box">
-
-      <span class="num">Sobre mí</span>
-
-      <h2>
-        Mirar más allá de la <em>fachada</em>.
-      </h2>
-
-      <p>
-        Mi formación en arquitectura me enseñó a entender estructuras antes que superficies. Hoy aplico esa misma mirada al branding: analizo marcas desde sus cimientos para construir narrativas con identidad real.
+      
+      <h1 class="hero-title">
+        Pienso marcas como quien construye estructuras: <span class="highlight">desde los cimientos,</span> no desde la fachada.
+      </h1>
+      
+      <p class="hero-sub">
+        Combino análisis estratégico, sensibilidad cultural y una mirada puesta en el resultado: si una campaña no convierte, no importa cuán bien se vea.
       </p>
+      
+      <div class="hero-actions">
+        <a href="#featured" class="btn btn-primary">Ver el caso destacado ↓</a>
+        <a href="mailto:mariadelosmgarcia@gmail.com" class="btn btn-outline">Escribime</a>
+      </div>
+    </section>
 
-      <p>
-        Crecí rodeada de fútbol, cultura popular y emociones colectivas. Entiendo que una marca deja de ser solo estética cuando logra convertirse en pertenencia.
-      </p>
+    <!-- FEATURED CASE: MY GYM ONLINE -->
+    <section class="featured-case" id="featured">
+      <div class="section-tag-header">
+        <span class="tag-pill tag-live">● CLIENTE REAL · EN CURSO</span>
+        <h2>My Gym Online</h2>
+        <p class="section-subtitle">Estrategia comercial, Google Ads, diseño de producto y optimización de conversión</p>
+      </div>
 
-      <p>
-        Mi enfoque mezcla análisis, intuición y sensibilidad cultural. No busco simplemente hacer contenido visualmente atractivo: busco construir marcas que alguien quiera sentir propias.
-      </p>
+      <div class="case-grid-layout">
+        <!-- Columna Izquierda -->
+        <div class="case-details">
+          <div class="detail-box">
+            <h3>El problema</h3>
+            <p>My Gym Online tenía una desconexión entre la inversión en Google Ads y el retorno real de la plataforma. La pauta generaba tráfico y pruebas gratis, pero con un costo de adquisición alto y poca conversión a planes pagos: el proyecto operaba con un déficit mensual de <strong>$54.000 ARS</strong>. Además, los usuarios que se registraban se enfriaban rápido, sin llegar a configurar sus cuentas.</p>
+          </div>
 
-    </div>
+          <div class="detail-box">
+            <h3>Mi rol</h3>
+            <ul class="clean-list">
+              <li><strong>Estrategia comercial & onboarding (WhatsApp):</strong> diseño de secuencias de baja fricción, mensajes de cierre/pausa preventiva y asistencia directa en la carga de listas de alumnos.</li>
+              <li><strong>Auditoría de pauta (Google Ads):</strong> análisis de search terms, limpieza de palabras clave irrelevantes, pausa de campañas ociosas y ajuste de concordancias.</li>
+              <li><strong>Análisis de producto y UX:</strong> cruce de métricas del panel interno y experimentos A/B para identificar barreras en el funnel de activación.</li>
+            </ul>
+          </div>
 
-  </div>
+          <div class="detail-box">
+            <h3>Proceso</h3>
+            <ol class="numbered-list">
+              <li><strong>Auditoría y reducción de fugas:</strong> bloqueo de ~$35.000 ARS gastados en búsquedas sin intención de compra (plantillas gratis, competidores) mediante palabras clave negativas.</li>
+              <li><strong>Reestructuración de concordancias:</strong> optimización de términos como "gestión gimnasio", bajando el costo por lead de $10.850 a ~$3.000 ARS.</li>
+              <li><strong>Corrección de UX:</strong> eliminación del panel con datos demo precargados, priorizando un onboarding asistido sobre un panel limpio.</li>
+              <li><strong>Seguimiento comercial:</strong> protocolo de contacto en 3 impactos por WhatsApp, enfocado en trials activos de alta intención.</li>
+            </ol>
+          </div>
+        </div>
 
-</section>
+        <!-- Columna Derecha: Métricas -->
+        <div class="metrics-column">
+          <div class="metric-card highlight-card">
+            <span class="m-num">-$54k → -$5k</span>
+            <span class="m-lbl">Déficit publicitario mensual (ARS)</span>
+          </div>
+          <div class="metric-card">
+            <span class="m-num">+80%</span>
+            <span class="m-lbl">Facturación recurrente ($125k → $225k ARS)</span>
+          </div>
+          <div class="metric-card">
+            <span class="m-num">4% → 6%</span>
+            <span class="m-lbl">Conversión a planes pagos</span>
+          </div>
+          <div class="metric-card">
+            <span class="m-num">+62,6%</span>
+            <span class="m-lbl">Alumnos activos (1.089 → 1.827)</span>
+          </div>
+          <div class="metric-card">
+            <span class="m-num">5 → 9</span>
+            <span class="m-lbl">Gimnasios con suscripción activa</span>
+          </div>
+        </div>
+      </div>
 
-<section id="contacto" class="section">
+      <!-- Estrategia de marca y producto -->
+      <div class="strategy-deep-card">
+        <h3>Estrategia de marca y producto</h3>
+        <div class="strategy-grid">
+          <div class="strat-col">
+            <p><strong>Diagnóstico ampliado:</strong> el cuello de botella de My Gym no está en el producto ni en la adquisición de tráfico, sino en la conversión de la prueba gratuita al plan pago — 32 gimnasios quedaban atrapados en esa fricción, sin llegar a experimentar el valor real del software antes de que venciera su período de prueba.</p>
+            <p><strong>Reposicionamiento:</strong> pasamos de comunicar "un software con funciones y código" a comunicar un aliado que devuelve tiempo y previsibilidad financiera — el dueño de un gimnasio chico no busca tecnología, busca el fin del quilombo administrativo y de la vergüenza de cobrar en persona.</p>
+            <p><strong>Rediseño del onboarding:</strong> extendí la prueba de 7 a 14 días, estructurada en 4 etapas (monitoreo activo, alivio humano vía WhatsApp si hay inactividad, maduración con tips de cobro, y cierre mostrando el ROI real), para garantizar que el usuario viva un ciclo de cobro completo antes de decidir pagar.</p>
+          </div>
+          <div class="strat-col">
+            <p><strong>Humanización del soporte:</strong> diseñé a Lucía, la cara visible del onboarding y el soporte de My Gym — un puente humano (no un chatbot frío) que acompaña por WhatsApp la transición digital del dueño del gimnasio, con videotutoriales nativos y sin tecnicismos.</p>
+            <figure class="lucia-figure">
+              <img src="images/mygym-lucia-referencia.png" alt="Imagen de referencia utilizada para crear la persona de soporte Lucía">
+              <figcaption>Referencia visual usada para construir la persona de Lucía</figcaption>
+            </figure>
+            <p><strong>Narrativa de contenido B2B:</strong> tres pilares para Instagram y LinkedIn — dolor real del negocio ("el cuaderno no avisa los vencimientos; My Gym, sí"), transparencia con casos de migración real, y cercanía a través del rol de Lucía.</p>
+          </div>
+        </div>
+      </div>
 
-  <div class="contact reveal">
+      <!-- Evidencias Visuales -->
+      <div class="case-gallery">
+        <figure class="gallery-item">
+          <img src="images/mygym-ads-antes.png" alt="Panel de Google Ads antes de la optimización: 104 clics, 1,19 mil impresiones, 2 conversiones, costo 18,8 mil $">
+          <figcaption>Google Ads — antes de la auditoría</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/mygym-ads-ahora.png" alt="Panel de Google Ads después de la optimización: 860 clics, 12,7 mil impresiones, 29 conversiones, costo 234 mil $">
+          <figcaption>Google Ads — después de la optimización</figcaption>
+        </figure>
+        <figure class="gallery-item full-width-fig">
+          <img src="images/mygym-crecimiento.png" alt="Gráfico de crecimiento de gimnasios: planes activos y registros semana a semana">
+          <figcaption>Crecimiento de gimnasios activos en la plataforma</figcaption>
+        </figure>
+      </div>
 
-    <h2>
-      ¿Tu marca necesita<br>
-      <em>pensar diferente?</em>
-    </h2>
+      <p class="case-status-tag">Estado: en curso — gestión activa de leads en trial y optimización continua de pauta.</p>
+    </section>
 
-    <a href="mailto:mariadelosmgarcia@gmail.com" class="btn">
-      Hablemos
-    </a>
+    <!-- CLIENT WORK / PROYECTOS REALES -->
+    <section class="section-container" id="trabajo">
+      <div class="section-tag-header">
+        <span class="tag-pill">TRABAJO CON CLIENTES</span>
+        <h2>Proyectos reales</h2>
+      </div>
 
-    <a class="linkedin" href="https://www.linkedin.com/in/mariadelosmilagrosgarcia/" target="_blank">
-      LINKEDIN
-    </a>
+      <div class="projects-masonry">
 
-  </div>
+        <!-- Jockey Plaza -->
+        <article class="project-card project-card-full">
+          <div class="project-image-wrap">
+            <img src="https://portfolio-garciamilagros.pages.dev/jockey-hero.webp" alt="Propuesta estratégica Jockey Plaza, 2002 Studio">
+            <span class="badge-overlay">2002 STUDIO</span>
+          </div>
+          <div class="project-content">
+            <span class="card-meta">TRABAJO REAL · DIAGNÓSTICO Y ESTRATEGIA INICIAL</span>
+            <h3>Jockey Plaza — Propuesta estratégica (2002 Studio)</h3>
+            <p>Lideré el diagnóstico y la propuesta estratégica de comunicación digital para Jockey Plaza como parte de 2002 Studio, estudio creativo y cultural. Identifiqué la problemática de fondo y diseñé la dinámica de trabajo completa: desde la estrategia y el calendario de contenido hasta la coordinación de producción y publicación. El proyecto continuó luego con otro equipo del estudio, pero se ejecutó sobre la base de mi diagnóstico y mi presentación original.</p>
+            <div class="scope-box">
+              <strong>Alcance de la propuesta:</strong>
+              <ul>
+                <li>Dirección creativa y lineamientos de marca.</li>
+                <li>Planificación estratégica de contenido mensual.</li>
+                <li>Desarrollo de conceptos y copies.</li>
+                <li>Coordinación de producciones audiovisuales, y gestión de publicación en redes.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
 
-</section>
+        <!-- Nuestro Hogar -->
+        <article class="project-card">
+          <div class="project-image-wrap">
+            <img src="https://portfolio-garciamilagros.pages.dev/nh-lanzamiento.webp" alt="Nuestro Hogar - branding">
+          </div>
+          <div class="project-content">
+            <span class="card-meta">CLIENTE · FOOD BRAND — CAMBIO DE COMUNICACIÓN</span>
+            <h3>Nuestro Hogar</h3>
+            <p>Rediseño del enfoque comunicacional de una marca ya existente: llevé el discurso desde lo puramente informativo hacia una narrativa construida sobre nostalgia y memoria afectiva, sin intervenir en la identidad visual de base.</p>
+          </div>
+        </article>
 
-</main>
+        <!-- Solari Bienes Raíces -->
+        <article class="project-card">
+          <div class="project-image-wrap">
+            <img src="https://portfolio-garciamilagros.pages.dev/solari-lanzamiento.webp" alt="Solari Bienes Raíces">
+          </div>
+          <div class="project-content">
+            <span class="card-meta">CLIENTE · REAL ESTATE — COLABORACIÓN CON MARKETINGCONDEB</span>
+            <h3>Solari Bienes Raíces</h3>
+            <p>Estrategia de contenidos para humanizar el sector inmobiliario, desarrollada en conjunto con MarketingConDeb. Mi foco estuvo en la estrategia de contenido y el mensaje de confianza y claridad hacia el usuario final.</p>
+          </div>
+        </article>
 
-<footer>
-  Diseñado por Milagros García —
-  entre estrategia, emoción y café.
-</footer>
+        <!-- Di Simonte (COMPLETO CON MINI GALLERY Y VIDEO) -->
+        <article class="project-card project-card-full">
+          <div class="project-image-wrap">
+            <img src="images/disimonte-logo.png" alt="Logo Di Simonte, cocina casera, hecho a mano">
+          </div>
+          <div class="project-content">
+            <span class="card-meta">PROYECTO PERSONAL — BRANDING INTEGRAL & COMUNICACIÓN DIGITAL</span>
+            <h3>Di Simonte</h3>
+            <p>Identidad de marca completa para un emprendimiento gastronómico casero: naming y tono de voz, sistema de etiquetas para packaging (con variantes de color por sabor), piezas para historias de Instagram — guía de pedido, anuncio de sabores, agradecimientos post-evento — y diseño del menú de pedidos con precios. Manejé todo el circuito de comunicación, de la etiqueta del producto a la conversión del pedido por Instagram.</p>
+            
+            <div class="gallery-grid-disimonte">
+              <img src="images/disimonte-sticker-mozzarella-jamon.png" alt="Etiqueta mozzarella y jamón">
+              <img src="images/disimonte-sticker-calabaza-nuez.png" alt="Etiqueta calabaza, nuez y mozzarella">
+              <img src="images/disimonte-sticker-bondiola-rectangular.png" alt="Etiqueta bondiola braseada">
+              <img src="images/disimonte-sticker-verdura-mozzarella.png" alt="Etiqueta verdura y mozzarella">
+              <img src="images/disimonte-sticker-bondiola-circular.png" alt="Etiqueta circular bondiola">
+              <img src="images/disimonte-historia-elegi-sabor.png" alt="Historia elegí sabor">
+              <img src="images/disimonte-historia-como-pedir.png" alt="Historia cómo pedir">
+              <img src="images/disimonte-historia-mandanos-mensaje.png" alt="Historia mandar mensaje">
+              <img src="images/disimonte-historia-sorrentinos.png" alt="Historia sorrentinos">
+              <img src="images/disimonte-historia-gracias.png" alt="Historia gracias">
+              <img src="images/disimonte-menu.png" alt="Menú de pedidos">
+            </div>
 
-<div class="lightbox" id="lightbox">
-  <img id="lightboxImg">
-</div>
+            <div class="video-container">
+              <video controls class="case-video" poster="images/disimonte-menu.png">
+                <source src="images/disimonte-publicaciones.mp4" type="video/mp4">
+                Tu navegador no puede reproducir este video.
+              </video>
+              <p class="case-footnote">Reel con la comunicación de publicaciones para redes.</p>
+            </div>
+          </div>
+        </article>
 
-<script>
+      </div>
+    </section>
 
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-    }
-  });
-},{threshold:.08});
+    <!-- CASE STUDIES -->
+    <section class="section-container" id="casos">
+      <div class="section-tag-header">
+        <span class="tag-pill">CASOS DE ESTUDIO</span>
+        <h2>Exploraciones estratégicas</h2>
+        <p class="section-subtitle">Ejercicios de análisis y reposicionamiento de marca, sin implementación real por parte del cliente.</p>
+      </div>
 
-document.querySelectorAll('.reveal').forEach(el=>{
-  observer.observe(el);
-});
+      <div class="projects-masonry">
 
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
+        <!-- Nike 42.195 razones (COMPLETO CON CHART Y MINI GALLERY) -->
+        <article class="project-card project-card-full study-highlight">
+          <div class="project-image-wrap">
+            <img src="images/nike-maraton-finish.png" alt="Corredor cruzando la meta del Maratón de Buenos Aires 2026, campaña Nike 42.195 razones">
+            <span class="badge-overlay badge-accent">MARATÓN BUENOS AIRES 2026</span>
+          </div>
+          <div class="project-content">
+            <span class="card-meta">CASO DE ESTUDIO · REPOSICIONAMIENTO ESTRATÉGICO DE MARCA</span>
+            <h3>Nike — 42.195 razones</h3>
+            
+            <div class="study-details-grid">
+              <div class="study-point">
+                <strong>Diagnóstico:</strong>
+                <p>Nike lidera en estética, innovación y lealtad de marca frente a la competencia (92 vs. 64, 95 vs. 58 y 83 vs. 76 respectivamente en índice de marca 0-100), pero muestra una brecha en percepción de rendimiento técnico de larga distancia frente a marcas especialistas (88 vs. 71).</p>
+              </div>
 
-document.querySelectorAll('.shot img').forEach(img=>{
+              <div class="study-point">
+                <strong>Insight del Corredor:</strong>
+                <p>El maratonista no busca estética; busca un socio tecnológico que valide su sacrificio en los kilómetros críticos — resumido en la frase: <em>"para correr 5km uso lo que sea, para correr 42km necesito algo que crea en mí tanto como yo"</em>.</p>
+              </div>
 
-  img.addEventListener('click',()=>{
+              <div class="study-point">
+                <strong>Big Idea:</strong>
+                <p><strong>"42.195 razones para no frenar nunca"</strong> — dejar de hablar de la meta para hablar de la resistencia.</p>
+              </div>
 
-    lightboxImg.src = img.src;
-    lightbox.classList.add('open');
+              <div class="study-point">
+                <strong>Ejecución 360°:</strong>
+                <p>Señalética de resistencia en circuitos de running (awareness geolocalizado), contenido con integración de datos de la app NRC (engagement y comunidad), y carreras con guía de audio para los kilómetros más duros (fidelización y servicio).</p>
+              </div>
+            </div>
 
-  });
+            <!-- Gráfico de Índice de Marca -->
+            <div class="chart-wrapper">
+              <img src="images/nike-brand-index-chart.png" alt="Gráfico de índice de marca Nike vs. competencia en estética, rendimiento, innovación y lealtad" class="case-chart">
+            </div>
 
-});
+            <!-- Galería de Piezas Nike -->
+            <div class="gallery-grid-nike">
+              <img src="images/nike-senaletica-km32.png" alt="Señalética KM 32">
+              <img src="images/nike-realismo-sucio.png" alt="Corredor nocturno bajo la lluvia">
+              <img src="images/nike-app-guia-audio.png" alt="Pantalla de app con carreras guiadas">
+              <img src="images/nike-story-mockup.png" alt="Mockup de historia de Instagram">
+              <img src="images/nike-bigidea-calle.png" alt="Calle nocturna con la frase iluminada">
+            </div>
 
-lightbox.addEventListener('click',()=>{
-  lightbox.classList.remove('open');
-});
+            <div class="highlight-box">
+              <strong>Proyección de impacto:</strong>
+              <p>+30% brand sentiment · +18% market share · +45% engagement en NRC, proyectado sobre el Maratón de Buenos Aires 2026.</p>
+            </div>
+          </div>
+        </article>
 
-</script>
+        <!-- Coca-Cola (COMPLETO) -->
+        <article class="project-card project-card-full">
+          <div class="project-image-wrap">
+            <img src="images/cocacola-bolsa.jpeg" alt="Bolsa ecológica Coca-Cola, campaña El sabor que cuida el futuro">
+            <span class="badge-overlay">TRABAJO GRUPAL · FACULTAD</span>
+          </div>
+          <div class="project-content">
+            <span class="card-meta">TRABAJO GRUPAL · FACULTAD — CAMPAÑA DE SUSTENTABILIDAD</span>
+            <h3>Coca-Cola — El sabor que cuida el futuro</h3>
+            <p>Actividad grupal de curso, desarrollada junto a compañeros, sobre las acciones de sustentabilidad de Coca-Cola (reposición del 100% del agua utilizada, programas de recolección y reutilización de residuos). Mi aporte estuvo en el desarrollo conceptual y de comunicación de la propuesta.</p>
+            
+            <div class="study-details-grid">
+              <div class="study-point">
+                <strong>Marketing directo:</strong>
+                <p>Bolsas ecológicas de diseño exclusivo para mayoristas y minoristas, con un folleto informativo sobre las acciones de la marca, una bolsita de semillas para incentivar a sembrar, y un vaso hecho con plásticos reciclados.</p>
+              </div>
+              <div class="study-point">
+                <strong>Acción en vía pública:</strong>
+                <p>Tachos de reciclaje de plástico en puntos estratégicos (Bosques de Palermo, Planetario, Puerto Madero) junto a una botella gigante transparente de 3 metros que se va llenando con lo recolectado, como metáfora visible del cambio colectivo.</p>
+              </div>
+              <div class="study-point">
+                <strong>Punto de venta:</strong>
+                <p>Estaciones de degustación gratuitas para comunicar que Coca-Cola sin azúcar mantiene el mismo sabor, con una estrategia de copy e invitación a compartir la experiencia en redes con el hashtag #MismoSaborSinAzúcar.</p>
+              </div>
+            </div>
 
+            <div class="mini-gallery-dynamic">
+              <img src="images/cocacola-vaso.jpeg" alt="Vaso de plástico reciclado">
+              <img src="images/cocacola-folleto-1.jpeg" alt="Folleto informativo Coca-Cola cara 1">
+              <img src="images/cocacola-folleto-2.jpeg" alt="Folleto informativo Coca-Cola cara 2">
+            </div>
+
+            <p class="case-footnote">Nota: la imagen del stand de degustación es un mockup generado con IA (Copilot), usado solo a modo ilustrativo dentro de la propuesta de curso.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section" id="sobre-mi">
+      <div class="about-card-inner">
+        <div class="about-photo-wrapper">
+          <img src="images/milagros-perfil.png" alt="Milagros García" class="about-img">
+          <div class="photo-accent-shadow"></div>
+        </div>
+        <div class="about-bio">
+          <span class="tag-pill">SOBRE MÍ</span>
+          <h2>Mirar más allá de la fachada</h2>
+          <p>Mi formación en arquitectura me enseñó a entender estructuras antes que superficies. Hoy aplico esa misma mirada al branding y a la comunicación digital: analizo marcas desde sus cimientos, y cuando hace falta, desde sus números.</p>
+          <p>No separo la estrategia creativa del resultado comercial. Puedo pensar el territorio narrativo de una marca y, en la misma semana, auditar una campaña de Google Ads para que ese territorio efectivamente convierta.</p>
+          
+          <div class="about-actions">
+            <a href="CV-Milagros-Garcia.pdf" class="btn btn-outline" download>Descargar CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-banner" id="contacto">
+      <div class="contact-content">
+        <span class="tag-pill tag-light">¿HABLAMOS?</span>
+        <h2>¿Tu marca necesita pensar diferente?</h2>
+        <p>Estrategia, análisis y soluciones creativas enfocadas en valor y retorno.</p>
+        
+        <div class="contact-methods">
+          <a href="mailto:mariadelosmgarcia@gmail.com" class="contact-chip">mariadelosmgarcia@gmail.com</a>
+          <a href="https://www.linkedin.com/in/mariadelosmilagrosgarcia/" target="_blank" rel="noopener" class="contact-chip">LinkedIn ↗</a>
+          <a href="https://www.instagram.com/Milagrosgaarciaa" target="_blank" rel="noopener" class="contact-chip">Instagram ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Diseñado por Milagros García — estrategia, emoción y café.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
