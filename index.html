@@ -3,62 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Milagros García — Estrategia de Marca & Dirección Creativa</title>
+  <title>Milagros García — Creative Brand Strategist</title>
   <meta name="description" content="Portfolio de Milagros García: Estrategia de marca, dirección creativa, lifestyle y optimización de conversión.">
   
+  <!-- Tipografías: Display Bold + Cursiva Caligráfica + Sans Moderna -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&family=Reenie+Beanie&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- NAVEGACIÓN BOUTIQUE -->
+  <!-- NAVEGACIÓN CREATIVA -->
   <header class="header">
-    <a href="#" class="logo">Milagros García<span class="logo-dot">.</span></a>
+    <a href="#" class="logo">
+      <span class="logo-bold">MILAGROS</span> <span class="logo-script">García</span>
+    </a>
     <nav class="nav">
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#proyectos">Casos & Clientes</a>
+      <a href="#sobre-mi">Perfil</a>
+      <a href="#visual-diary">Visual Diary</a>
+      <a href="#proyectos">Casos</a>
       <a href="#estrategia">Estrategia</a>
-      <a href="#contacto" class="btn-nav">Hablemos ↗</a>
+      <a href="#contacto" class="btn-nav">¡Hablemos! ✦</a>
     </nav>
   </header>
+
+  <!-- MARQUEE INFINITO -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>BRAND ARCHITECTURE ✦ VINO BLANCO AL ATARDECER ✦ CONTENIDO EN CÁMARA ✦ MOVILIDAD ELÉCTRICA ✦ CONVERSIÓN & ADS ✦ DEL CAMPING A LA FIESTA ✦ MAR CARIBE ✦</span>
+      <span>BRAND ARCHITECTURE ✦ VINO BLANCO AL ATARDECER ✦ CONTENIDO EN CÁMARA ✦ MOVILIDAD ELÉCTRICA ✦ CONVERSIÓN & ADS ✦ DEL CAMPING A LA FIESTA ✦ MAR CARIBE ✦</span>
+    </div>
+  </div>
 
   <main class="main-wrapper">
 
     <!-- HERO SECTION -->
     <section class="hero">
-      <div class="hero-tag">
-        <span class="pulse-dot"></span> Licenciada en Publicidad · Brand Strategist
+      <div class="hero-stickers-row">
+        <span class="badge-tag tag-pink">LIC. EN PUBLICIDAD</span>
+        <span class="badge-tag tag-turquoise">✦ CREATIVE STRATEGIST ✦</span>
       </div>
       
       <h1 class="hero-title">
-        Construyo marcas como quien diseña estructuras: <em>desde los cimientos,</em> no desde la fachada.
+        Construyo marcas como quien diseña estructuras: <br>
+        <span class="highlight-heavy">DESDE LOS CIMIENTOS,</span> <br>
+        <span class="highlight-italic">no desde la fachada.</span>
       </h1>
       
       <p class="hero-lead">
-        Combino sensibilidad estética, criterio cultural y rigor analítico: si una campaña no despierta emoción ni genera retorno comercial, el diseño no cumplió su función.
+        Combino sensibilidad cultural, buen gusto y rigor de performance. Si una campaña no despierta deseo ni mueve los números del negocio, el diseño no cumplió su rol.
       </p>
       
       <div class="hero-actions">
-        <a href="#proyectos" class="btn btn-primary">Ver proyectos seleccionados ↓</a>
-        <a href="#sobre-mi" class="btn btn-secondary">Conocer mi perfil</a>
+        <a href="#proyectos" class="btn btn-aqua">Ver proyectos clave ↓</a>
+        <a href="#visual-diary" class="btn btn-outline">Explorar mi universo visual</a>
       </div>
     </section>
 
-    <!-- SOBRE MÍ: MANIFIESTO & VISIÓN PERSONAL -->
+    <!-- VISUAL DIARY -->
+    <section class="visual-diary-section" id="visual-diary">
+      <div class="section-title-wrap">
+        <span class="kicker">Atmósfera & Lifestyle</span>
+        <h2>Visual Diary — La mirada antes que la estrategia</h2>
+      </div>
+
+      <div class="diary-collage">
+        <div class="diary-item card-sea-1">
+          <img src="mar-1.png" alt="Mar Caribe Turquesa" onerror="handleImageFallbacks(this)">
+          <div class="diary-stamp stamp-turquoise">Agua & Claridad</div>
+        </div>
+
+        <div class="diary-item card-sunset-1">
+          <img src="atardecer-1.jpeg" alt="Atardecer Dorado y Fuego" onerror="handleImageFallbacks(this)">
+          <div class="diary-stamp stamp-pink">Golden Hour</div>
+        </div>
+
+        <div class="diary-item card-sea-2">
+          <img src="mar-2.png" alt="Playa y Costa" onerror="handleImageFallbacks(this)">
+          <div class="diary-stamp stamp-lavender">Textura Natural</div>
+        </div>
+
+        <div class="diary-item card-sunset-2">
+          <img src="atardecer-2.jpg" alt="Cielo Crepúsculo" onerror="handleImageFallbacks(this)">
+          <div class="diary-stamp stamp-warm">Contraluz Urbano</div>
+        </div>
+      </div>
+      <p class="diary-caption">"Mi paleta y criterio visual nacen de acá: de los contrastes reales entre el mar, el cielo y la ciudad."</p>
+    </section>
+
+    <!-- SOBRE MÍ -->
     <section class="about-module" id="sobre-mi">
       <div class="about-grid">
         <div class="about-photo-wrapper">
           <div class="photo-frame">
             <img src="milagros-perfil.png.png" alt="Milagros García" class="portrait-img" onerror="handleImageFallbacks(this)">
           </div>
-          <div class="photo-badge">Estrategia · Lifestyle · Presencia Visual</div>
+          <div class="polaroid-tag">Milagros García · Estratega & Perfil en Cámara</div>
         </div>
 
         <div class="about-content">
-          <span class="kicker">Perfil & Sensibilidad</span>
+          <span class="kicker">Sensibilidad & Perfil Híbrido</span>
           <h2>Estructura, contrastes & buen gusto</h2>
           <p class="lead-p">
             Estratega de marca, creadora y perfil en cámara. Me muevo con la misma soltura entre la dirección visual sofisticada y la espontaneidad del formato documental.
@@ -68,11 +114,11 @@
           </p>
           
           <div class="pill-group">
-            <span class="pill">Brand Architecture</span>
-            <span class="pill">Lifestyle & Fashion Curation</span>
-            <span class="pill">Google Ads & Conversion</span>
-            <span class="pill">Storytelling & Naming</span>
-            <span class="pill">Contenido en Cámara</span>
+            <span class="pill pill-pink">Brand Architecture</span>
+            <span class="pill pill-aqua">Lifestyle & Fashion Curation</span>
+            <span class="pill pill-lavender">Google Ads & Conversion</span>
+            <span class="pill pill-yellow">Storytelling & Naming</span>
+            <span class="pill pill-aqua">Contenido en Cámara</span>
           </div>
 
           <div class="about-action-row">
@@ -103,7 +149,7 @@
     <!-- CASOS REALES: MY GYM & JOCKEY -->
     <section class="featured-case" id="proyectos">
       <div class="section-title-wrap">
-        <span class="kicker highlight-kicker">Trabajos Reales</span>
+        <span class="kicker">Impacto Comprobado</span>
         <h2>Proyectos & Clientes</h2>
       </div>
 
@@ -136,9 +182,9 @@
             <span class="m-num">-$54k → -$5k</span>
             <span class="m-txt">Déficit mensual reducido (ARS)</span>
           </div>
-          <div class="m-card primary-m-card">
+          <div class="m-card highlight-m-card">
             <span class="m-num">+80%</span>
-            <span class="m-txt">Facturación mensual recurrente</span>
+            <span class="m-txt">Facturación recurrente</span>
           </div>
           <div class="m-card">
             <span class="m-num">4% → 6%</span>
@@ -150,7 +196,6 @@
           </div>
         </div>
 
-        <!-- Evidencias Visuales My Gym -->
         <div class="evidence-gallery">
           <figure>
             <img src="anuncios-de-mi-gimnasio.png.webp" alt="Google Ads Antes" onerror="handleImageFallbacks(this)">
@@ -171,7 +216,7 @@
         </div>
       </div>
 
-      <!-- JOCKEY PLAZA (AUDITORÍA / PROPUESTA CONCEPTUAL) -->
+      <!-- JOCKEY PLAZA -->
       <div class="case-card-container space-top">
         <div class="project-head-block">
           <span class="tag-meta">PROPUESTA ESTRATÉGICA · AUDITORÍA</span>
@@ -180,7 +225,7 @@
         </div>
 
         <p class="case-paragraph">
-          Lideré el diagnóstico y la propuesta estratégica de comunicación digital para Jockey Plaza. Diseñé la dirección creativa, lineamientos de tono, planificación mensual de contenido, desarrollo de copys y una propuesta de producción audiovisual enfocada en ocio, coctelería y gastronomía de alto nivel para renovar el posicionamiento digital de la marca.
+          Lideré el diagnóstico y la propuesta estratégica de comunicación digital para Jockey Plaza. Diseñé la dirección creativa, lineamientos de tono, planificación mensual de contenido, desarrollo de copys y dinámica de producción audiovisual enfocada en ocio, coctelería y gastronomía de alto nivel.
         </p>
 
         <div class="jockey-showcase-grid">
@@ -229,11 +274,11 @@
       </div>
     </section>
 
-    <!-- CASOS DE ESTUDIO / ESTRATEGIA CONCEPTUAL -->
+    <!-- CASOS DE ESTUDIO CONCEPTUALES -->
     <section class="strategy-section" id="estrategia">
       <div class="section-title-wrap">
-        <span class="kicker">Exploraciones Estratégicas</span>
-        <h2>Casos Conceptuales</h2>
+        <span class="kicker">Pensamiento Conceptual</span>
+        <h2>Casos de Estudio</h2>
       </div>
 
       <!-- NIKE 42.195 RAZONES -->
@@ -293,12 +338,12 @@
     <!-- CONTACTO -->
     <section class="contact-module" id="contacto">
       <div class="contact-card">
-        <span class="kicker">Conversemos</span>
+        <span class="badge-tag tag-pink">¿CONECTAMOS?</span>
         <h2>¿Pensamos juntas tu próxima estrategia?</h2>
         <p>Disponible para colaboraciones creativas, dirección de marca, lifestyle y consultoría estratégica.</p>
         
         <div class="contact-links-row">
-          <a href="mailto:mariadelosmgarcia@gmail.com" class="contact-chip">mariadelosmgarcia@gmail.com</a>
+          <a href="mailto:mariadelosmgarcia@gmail.com" class="contact-chip chip-aqua">mariadelosmgarcia@gmail.com</a>
           <a href="https://www.linkedin.com/in/mariadelosmilagrosgarcia/" target="_blank" rel="noopener" class="contact-chip">LinkedIn ↗</a>
           <a href="https://www.instagram.com/Milagrosgaarciaa" target="_blank" rel="noopener" class="contact-chip">Instagram ↗</a>
         </div>
@@ -308,7 +353,7 @@
   </main>
 
   <footer class="footer">
-    <p>© 2026 Milagros García — Estrategia de Marca & Pensamiento Creativo.</p>
+    <p>© 2026 Milagros García — Brand Strategist & Creative Mind.</p>
   </footer>
 
   <script src="script.js"></script>
