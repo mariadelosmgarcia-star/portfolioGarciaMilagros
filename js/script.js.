@@ -1,4 +1,12 @@
 // script.js
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Portfolio Milagros García cargado con éxito.");
+  console.log("Portfolio de Milagros García cargado correctamente.");
+
+  // Oculta de forma limpia cualquier imagen que no logre cargar
+  const images = document.querySelectorAll("img");
+  images.forEach((img) => {
+    img.addEventListener("error", () => {
+      img.style.display = "none";
+    });
+  });
 });
