@@ -1,3 +1,31 @@
+// Script de recuperación automática de rutas de imágenes
+function handleImgError(img) {
+  const originalSrc = img.getAttribute('src');
+  
+  // Si ya intentó varias veces, detener para evitar bucles
+  if (img.dataset.failedAttempts >= 3) {
+    img.style.opacity = '0.3';
+    return;
+  }
+  
+  img.dataset.failedAttempts = (parseInt(img.dataset.failedAttempts) || 0) + 1;
+  const fileName = originalSrc.split('/').pop(); // Extrae solo el nombre del archivo
+  
+  if (img.dataset.failedAttempts === 1) {
+    // Intento 1: Probar buscar la imagen directamente en la raíz (por si no está dentro de /images)
+    img.src = fileName;
+  } else if (img.dataset.failedAttempts === 2) {
+    // Intento 2: Probar cambiar extensión entre .png y .jpg / .jpeg
+    if (fileName.endsWith('.png')) {
+      img.src = 'images/' + fileName.replace('.png', '.jpg');
+    } else if (fileName.endsWith('.jpeg')) {
+      img.src = 'images/' + fileName.replace('.jpeg', '.jpg');
+    } else if (fileName.endsWith('.jpg')) {
+      img.src = 'images/' + fileName.replace('.jpg', '.png');
+    }
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Portfolio Milagros García cargado correctamente.");
+  console.log("Portfolio Milagros García cargado con diseño editorial sensible.");
 });
